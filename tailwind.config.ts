@@ -18,7 +18,14 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				cormorant: ['Cormorant', 'serif'],
+				openSans: ['Open Sans', 'sans-serif']
+			},
 			colors: {
+				gold: '#B8860B',
+				darkGray: '#1F2937',
+				lightGray: '#F8F9FA',
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',

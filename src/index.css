@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,6 +9,11 @@
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
+
+    /* Custom colors */
+    --gold: 43 74% 40%;
+    --dark-gray: 220 26% 14%;
+    --light-gray: 210 17% 98%;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
