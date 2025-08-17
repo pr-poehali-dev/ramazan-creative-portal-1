@@ -139,13 +139,14 @@ const Index = () => {
     },
     {
       id: 3,
-      title: "Дагестан: пути развития",
-      description: "Анализ социально-экономического развития республики и перспективы будущего",
+      title: "От родовой башни до ворот Кремля",
+      description: "Автобиографические записки о пути от горного села до высших эшелонов власти",
       year: "2018",
       pages: 312,
       price: 980,
-      category: "Экономика",
-      isbn: "978-5-00345-678-9"
+      category: "Мемуары",
+      isbn: "978-5-00345-678-9",
+      image: "https://cdn.poehali.dev/files/0b9cff16-307c-4771-b428-6bf076542dbc.jpg"
     },
     {
       id: 4,
@@ -758,8 +759,18 @@ const Index = () => {
               <Card key={book.id} className="group hover:shadow-xl transition-all duration-300">
                 <CardContent className="p-8">
                   <div className="flex gap-6">
-                    <div className="w-24 h-32 bg-gradient-to-br from-gold to-yellow-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Icon name="Book" size={32} className="text-white" />
+                    <div className="w-24 h-32 rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
+                      {book.image ? (
+                        <img 
+                          src={book.image} 
+                          alt={book.title}
+                          className="w-full h-full object-cover rounded-lg"
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-gradient-to-br from-gold to-yellow-600 rounded-lg flex items-center justify-center">
+                          <Icon name="Book" size={32} className="text-white" />
+                        </div>
+                      )}
                     </div>
                     <div className="flex-1">
                       <Badge variant="outline" className="mb-3">{book.category}</Badge>
