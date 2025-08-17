@@ -33,84 +33,84 @@ const Index = () => {
     {
       id: 1,
       title: "Воды Каспия",
-      description: "Абстрактная композиция, вдохновленная морскими пейзажами родного края",
+      description: "Абстрактная композиция, вдохновленная морскими пейзажами родного края. Размер: 60x80 см, материал: акрил",
       image: "https://cdn.poehali.dev/files/6bd61afb-63ed-44fe-8fdd-c4dd99f0dad9.jpeg",
       year: "2019"
     },
     {
       id: 2,
       title: "Горная пастораль",
-      description: "Традиционная жизнь горцев в ярких красках народного творчества",
+      description: "Традиционная жизнь горцев в ярких красках народного творчества. Размер: 50x70 см, материал: акрил",
       image: "https://cdn.poehali.dev/files/f3525173-4711-4f1f-b069-a502ef0ab489.jpeg",
       year: "2020"
     },
     {
       id: 3,
       title: "Кавказские вершины",
-      description: "Величественные горы Дагестана в экспрессивной живописной манере",
+      description: "Величественные горы Дагестана в экспрессивной живописной манере. Размер: 70x90 см, материал: акрил",
       image: "https://cdn.poehali.dev/files/06503cca-7832-4acd-b5c6-66b3f4c8a68e.jpeg",
       year: "2021"
     },
     {
       id: 4,
       title: "Осенний свет",
-      description: "Экспрессивная композиция с яркими желтыми и красными акцентами, символизирующая энергию осени",
+      description: "Экспрессивная композиция с яркими желтыми и красными акцентами, символизирующая энергию осени. Размер: 40x60 см, материал: акрил",
       image: "https://cdn.poehali.dev/files/abe30654-ce65-42ea-a9cd-eaf83af35505.jpg",
       year: "2022"
     },
     {
       id: 5,
       title: "Сердце земли",
-      description: "Глубокая абстракция с красным центром, окруженным природными формами и цветами",
+      description: "Глубокая абстракция с красным центром, окруженным природными формами и цветами. Размер: 80x100 см, материал: акрил",
       image: "https://cdn.poehali.dev/files/631cc71a-5e19-48c2-874f-a1f7bf19fcdb.jpeg",
       year: "2022"
     },
     {
       id: 6,
       title: "Космические ветра",
-      description: "Динамичная композиция в бирюзовых и оранжевых тонах, напоминающая вихри в космосе",
+      description: "Динамичная композиция в бирюзовых и оранжевых тонах, напоминающая вихри в космосе. Размер: 50x80 см, материал: акрил",
       image: "https://cdn.poehali.dev/files/b7ffc4d2-2ccf-4ace-9605-4e129f731262.jpeg",
       year: "2023"
     },
     {
       id: 7,
       title: "Розовый сад",
-      description: "Яркий букет роз на солнечном фоне, выполненный в импрессионистической манере",
+      description: "Яркий букет роз на солнечном фоне, выполненный в импрессионистической манере. Размер: 30x40 см, материал: акрил",
       image: "https://cdn.poehali.dev/files/bf7d7a43-2335-40bd-9918-24f5e2e30abf.jpeg",
       year: "2023"
     },
     {
       id: 8,
       title: "Вихрь страсти",
-      description: "Экспрессивная абстракция с огненными красками, отражающая внутреннюю энергию творчества",
+      description: "Экспрессивная абстракция с огненными красками, отражающая внутреннюю энергию творчества. Размер: 60x90 см, материал: акрил",
       image: "https://cdn.poehali.dev/files/f9bab1ef-a7b2-4e5f-a851-3e3060f684e4.jpeg",
       year: "2024"
     },
     {
       id: 9,
       title: "Осенний лес",
-      description: "Яркая экспрессивная работа с красно-оранжевыми кронами деревьев на изумрудном фоне",
+      description: "Яркая экспрессивная работа с красно-оранжевыми кронами деревьев на изумрудном фоне. Размер: 40x50 см, материал: акрил",
       image: "https://cdn.poehali.dev/files/029268b8-89ed-4027-b95a-7c2b65a4fe42.jpg",
       year: "2024"
     },
     {
       id: 10,
       title: "Радужный поток",
-      description: "Динамичная абстракция с яркими полосами цвета, символизирующая движение жизни",
+      description: "Динамичная абстракция с яркими полосами цвета, символизирующая движение жизни. Размер: 70x120 см, материал: акрил",
       image: "https://cdn.poehali.dev/files/b98c33bc-4306-48bf-92e4-16b15157282b.jpeg",
       year: "2024"
     },
     {
       id: 11,
       title: "Красный цветок",
-      description: "Нежная работа с одиноким красным цветком на фоне голубого неба и золотого поля",
+      description: "Нежная работа с одиноким красным цветком на фоне голубого неба и золотого поля. Размер: 25x35 см, материал: акрил",
       image: "https://cdn.poehali.dev/files/95ceff4c-abd3-48f4-8b82-d7945d5e4ec6.jpeg",
       year: "2024"
     },
     {
       id: 12,
       title: "Горные вершины",
-      description: "Мощная экспрессивная композиция с острыми пиками в ярких зелено-красных тонах",
+      description: "Мощная экспрессивная композиция с острыми пиками в ярких зелено-красных тонах. Размер: 90x120 см, материал: акрил",
       image: "https://cdn.poehali.dev/files/8f0d913a-b971-4c0d-b1dd-b02013104f81.jpeg",
       year: "2024"
     }
@@ -123,7 +123,6 @@ const Index = () => {
       description: "Философские эссе о природе времени, роли личности в истории и поиске смысла бытия",
       year: "2020",
       pages: 384,
-      price: 1200,
       category: "Философия",
       isbn: "978-5-00123-456-7"
     },
@@ -133,7 +132,6 @@ const Index = () => {
       description: "Исследование межнациональных отношений и культурного диалога на Кавказе",
       year: "2019",
       pages: 456,
-      price: 1500,
       category: "Политология",
       isbn: "978-5-00234-567-8"
     },
@@ -143,7 +141,6 @@ const Index = () => {
       description: "Автобиографические записки о пути от горного села до высших эшелонов власти",
       year: "2018",
       pages: 312,
-      price: 980,
       category: "Мемуары",
       isbn: "978-5-00345-678-9",
       image: "https://cdn.poehali.dev/files/0b9cff16-307c-4771-b428-6bf076542dbc.jpg"
@@ -154,7 +151,6 @@ const Index = () => {
       description: "Культурологическое исследование традиций народов Дагестана в контексте глобализации",
       year: "2017",
       pages: 275,
-      price: 850,
       category: "Культурология",
       isbn: "978-5-00456-789-0"
     },
@@ -164,7 +160,6 @@ const Index = () => {
       description: "Этнографическое исследование культуры и традиций народов Дагестана",
       year: "2019",
       pages: 428,
-      price: 1350,
       category: "Этнография", 
       isbn: "978-5-00567-890-1",
       image: "https://cdn.poehali.dev/files/20188352-700e-4a04-a7d6-cf1ec606819f.jpeg"
@@ -577,7 +572,7 @@ const Index = () => {
                   Более 20 опубликованных книг по политике, философии и культуре
                 </p>
                 <img 
-                  src="/img/286bbf1f-5830-40f1-b4dc-990506adc2fc.jpg" 
+                  src="https://cdn.poehali.dev/files/89cafe64-fc26-4592-9f2d-a2a7877082fe.jpeg" 
                   alt="Книги Рамазана Абдулатипова"
                   className="rounded-lg mb-6 w-full h-48 object-cover"
                 />
@@ -601,7 +596,7 @@ const Index = () => {
                   Живописные работы, отражающие красоту Кавказа и философские размышления
                 </p>
                 <img 
-                  src="/img/58544fe2-70af-48cd-9932-4db058ca954d.jpg" 
+                  src="https://cdn.poehali.dev/files/1776b388-f570-41d6-a23f-a04d68d21513.jpeg" 
                   alt="Картины Рамазана Абдулатипова"
                   className="rounded-lg mb-6 w-full h-48 object-cover"
                 />
@@ -624,9 +619,11 @@ const Index = () => {
                 <p className="text-gray-600 mb-6 font-openSans">
                   Музыкальные композиции, вдохновленные народными традициями Дагестана
                 </p>
-                <div className="bg-gradient-to-r from-gold to-yellow-600 rounded-lg mb-6 w-full h-48 flex items-center justify-center">
-                  <Icon name="Music2" size={64} className="text-white opacity-50" />
-                </div>
+                <img 
+                  src="https://cdn.poehali.dev/files/77684f27-14a7-443e-a139-e77aad289f5b.jpeg" 
+                  alt="Музыка Рамазана Абдулатипова"
+                  className="rounded-lg mb-6 w-full h-48 object-cover"
+                />
                 <Badge variant="secondary" className="mb-2">Народная музыка</Badge>
                 <Badge variant="secondary" className="mb-2 ml-2">Композиции</Badge>
                 <Button className="mt-4 bg-gold hover:bg-yellow-600 text-white" onClick={() => document.getElementById('music-player')?.scrollIntoView({ behavior: 'smooth' })}>
@@ -896,14 +893,11 @@ const Index = () => {
                           <span className="font-semibold">ISBN:</span>
                           <span>{book.isbn}</span>
                         </div>
-                        <div className="flex justify-between">
-                          <span className="font-semibold">Цена:</span>
-                          <span className="text-gold font-bold">{book.price} ₽</span>
-                        </div>
+
                       </div>
                       <Button className="bg-gold hover:bg-yellow-600 text-white w-full">
                         <Icon name="ShoppingCart" size={16} className="mr-2" />
-                        Заказать за {book.price} ₽
+                        Заказать
                       </Button>
                     </div>
                   </div>
