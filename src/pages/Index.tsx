@@ -547,10 +547,7 @@ const Index = () => {
                         <span>•</span>
                         <span>ISBN: {book.isbn}</span>
                       </div>
-                      <div className="flex items-center justify-between">
-                        <div className="text-2xl font-bold text-gold">
-                          {book.price} ₽
-                        </div>
+                      <div className="flex justify-end">
                         <Button className="bg-gold hover:bg-yellow-600 text-white">
                           <Icon name="ShoppingCart" size={16} className="mr-2" />
                           Заказать
@@ -600,7 +597,7 @@ const Index = () => {
                     <option>Выберите книгу</option>
                     {books.map((book) => (
                       <option key={book.id} value={book.id}>
-                        {book.title} - {book.price} ₽
+                        {book.title}
                       </option>
                     ))}
                   </select>
