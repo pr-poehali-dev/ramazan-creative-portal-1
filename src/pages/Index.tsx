@@ -157,6 +157,61 @@ const Index = () => {
       price: 850,
       category: "Культурология",
       isbn: "978-5-00456-789-0"
+    },
+    {
+      id: 5,
+      title: "Мой дагестанский народ",
+      description: "Этнографическое исследование культуры и традиций народов Дагестана",
+      year: "2019",
+      pages: 428,
+      price: 1350,
+      category: "Этнография", 
+      isbn: "978-5-00567-890-1",
+      image: "https://cdn.poehali.dev/files/20188352-700e-4a04-a7d6-cf1ec606819f.jpeg"
+    },
+    {
+      id: 6,
+      title: "Россия: в чем суть твоего бытия?",
+      description: "Философские размышления о национальной идентичности и пути развития России",
+      year: "2021",
+      pages: 392,
+      price: 1480,
+      category: "Философия",
+      isbn: "978-5-00678-901-2",
+      image: "https://cdn.poehali.dev/files/6686fdec-4113-4327-be17-6108b4ba2400.jpeg"
+    },
+    {
+      id: 7,
+      title: "Власть и совесть",
+      description: "Политические мемуары и размышления о роли морали в государственном управлении",
+      year: "2020",
+      pages: 356,
+      price: 1260,
+      category: "Политика",
+      isbn: "978-5-00789-012-3",
+      image: "https://cdn.poehali.dev/files/fcee1e96-a1b2-4f36-86dc-64489c36a244.jpg"
+    },
+    {
+      id: 8,
+      title: "В афоризмах на каждый день",
+      description: "Сборник мудрых изречений и жизненных наблюдений",
+      year: "2022",
+      pages: 248,
+      price: 890,
+      category: "Афоризмы",
+      isbn: "978-5-00890-123-4",
+      image: "https://cdn.poehali.dev/files/a2f0c304-8cac-483e-99f7-076b5fcc80ac.jpeg"
+    },
+    {
+      id: 9,
+      title: "Опыты поэтической философии",
+      description: "Поэтические размышления о смысле жизни, любви и творчестве",
+      year: "2023",
+      pages: 312,
+      price: 1150,
+      category: "Поэзия",
+      isbn: "978-5-00901-234-5",
+      image: "https://cdn.poehali.dev/files/abb8a252-0340-436d-8c46-1429644b3a4c.jpg"
     }
   ];
 
@@ -611,8 +666,11 @@ const Index = () => {
                     </div>
                     <CardContent className="p-6">
                       <h3 className="text-xl font-bold mb-2 font-cormorant text-darkGray">{painting.title}</h3>
-                      <p className="text-gray-600 font-openSans text-sm mb-3">{painting.description}</p>
-                      <Badge variant="outline">{painting.year}</Badge>
+                      <p className="text-gray-600 font-openSans text-sm mb-4">{painting.description}</p>
+                      <Button className="bg-gold hover:bg-yellow-600 text-white w-full">
+                        <Icon name="ShoppingCart" size={16} className="mr-2" />
+                        Заказать
+                      </Button>
                     </CardContent>
                   </Card>
                 </DialogTrigger>
@@ -627,7 +685,6 @@ const Index = () => {
                     </div>
                     <div className="space-y-4">
                       <h3 className="text-3xl font-bold font-cormorant text-darkGray">{painting.title}</h3>
-                      <Badge variant="outline">{painting.year}</Badge>
                       <p className="text-gray-600 font-openSans leading-relaxed">{painting.description}</p>
                       <div className="border-t pt-4">
                         <h4 className="font-semibold mb-2 font-cormorant">Техника:</h4>
@@ -756,10 +813,10 @@ const Index = () => {
           
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             {books.map((book) => (
-              <Card key={book.id} className="group hover:shadow-xl transition-all duration-300">
+              <Card key={book.id} className="group hover:shadow-xl transition-all duration-300 hover:scale-105 relative">
                 <CardContent className="p-8">
                   <div className="flex gap-6">
-                    <div className="w-24 h-32 rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
+                    <div className="w-24 h-32 rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden group-hover:scale-110 transition-transform duration-300">
                       {book.image ? (
                         <img 
                           src={book.image} 
@@ -794,6 +851,13 @@ const Index = () => {
                         </Button>
                       </div>
                     </div>
+                  </div>
+                  
+                  {/* Hover Tooltip */}
+                  <div className="absolute top-2 right-2 bg-darkGray text-white p-3 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 max-w-xs z-10">
+                    <p className="text-sm font-openSans leading-relaxed">
+                      {book.description}
+                    </p>
                   </div>
                 </CardContent>
               </Card>
