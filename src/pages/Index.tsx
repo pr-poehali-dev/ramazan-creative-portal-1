@@ -253,16 +253,7 @@ const Index = () => {
       {/* Biography Section */}
       <section id="biography" className="py-20 bg-white">
         <div className="container mx-auto px-6">
-          {/* Inspirational Quote */}
-          <div className="bg-gradient-to-r from-gold/10 to-yellow-50 rounded-xl p-8 text-center shadow-md border border-gold/20 mb-12 max-w-3xl mx-auto">
-            <Icon name="Quote" size={36} className="text-gold mx-auto mb-4" />
-            <blockquote className="text-lg font-medium text-darkGray mb-4 font-openSans leading-relaxed italic">
-              "Настоящий лидер должен не только управлять но и вдохновлять не только решать 
-              проблемы настоящего но и создавать основы для будущих поколений. Культура и 
-              образование — это фундамент любого прогресса."
-            </blockquote>
-            <cite className="text-gold font-bold font-cormorant text-lg">— Рамазан Абдулатипов</cite>
-          </div>
+
 
           <h2 className="text-4xl font-bold text-center mb-4 font-cormorant text-darkGray">
             Биография
