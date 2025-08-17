@@ -243,6 +243,17 @@ const Index = () => {
             </div>
           </div>
 
+          {/* Personal Philosophy */}
+          <div className="bg-gradient-to-r from-gold to-yellow-500 rounded-xl p-12 text-center shadow-2xl border-4 border-yellow-400 mb-20">
+            <Icon name="Quote" size={80} className="text-white mx-auto mb-8 drop-shadow-lg" />
+            <blockquote className="text-3xl font-bold text-white mb-8 font-openSans leading-relaxed max-w-5xl mx-auto drop-shadow-md">
+              "Настоящий лидер должен не только управлять, но и вдохновлять, не только решать 
+              проблемы настоящего, но и создавать основы для будущих поколений. Культура и 
+              образование — это фундамент любого прогресса."
+            </blockquote>
+            <cite className="text-white font-bold font-cormorant text-3xl drop-shadow-md">— Рамазан Абдулатипов</cite>
+          </div>
+
           {/* Timeline */}
           <div className="mb-20">
             <h3 className="text-3xl font-bold text-center mb-12 font-cormorant text-darkGray">
@@ -289,16 +300,7 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Personal Philosophy */}
-          <div className="bg-gradient-to-r from-gold to-yellow-500 rounded-xl p-12 text-center shadow-2xl border-4 border-yellow-400">
-            <Icon name="Quote" size={64} className="text-white mx-auto mb-8 drop-shadow-lg" />
-            <blockquote className="text-2xl font-bold text-white mb-8 font-openSans leading-relaxed max-w-4xl mx-auto drop-shadow-md">
-              "Настоящий лидер должен не только управлять, но и вдохновлять, не только решать 
-              проблемы настоящего, но и создавать основы для будущих поколений. Культура и 
-              образование — это фундамент любого прогресса."
-            </blockquote>
-            <cite className="text-white font-bold font-cormorant text-2xl drop-shadow-md">— Рамазан Абдулатипов</cite>
-          </div>
+
         </div>
       </section>
 
