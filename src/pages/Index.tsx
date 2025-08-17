@@ -8,6 +8,7 @@ import { useState, useRef } from "react";
 const Index = () => {
   const [currentTrack, setCurrentTrack] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [expandedTimelineItem, setExpandedTimelineItem] = useState<number | null>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   const musicTracks = [
@@ -142,6 +143,10 @@ const Index = () => {
     setIsPlaying(false);
   };
 
+  const toggleTimelineItem = (index: number) => {
+    setExpandedTimelineItem(expandedTimelineItem === index ? null : index);
+  };
+
   return (
     <div className="min-h-screen bg-lightGray">
       {/* Header */}
@@ -245,20 +250,36 @@ const Index = () => {
             <div className="relative">
               <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gold"></div>
               {timeline.map((event, index) => (
-                <div key={index} className="relative flex items-center mb-12">
+                <div key={index} className="relative flex items-start mb-8">
                   <div className="absolute left-0 w-8 h-8 bg-gold rounded-full flex items-center justify-center">
                     <div className="w-3 h-3 bg-white rounded-full"></div>
                   </div>
-                  <div className="ml-16">
-                    <Card className="p-6">
-                      <div className="flex flex-col md:flex-row md:items-center gap-4">
-                        <Badge variant="outline" className="w-fit">{event.year}</Badge>
-                        <div>
-                          <h4 className="text-xl font-bold font-cormorant text-darkGray mb-2">
-                            {event.title}
-                          </h4>
-                          <p className="text-gray-600 font-openSans">{event.description}</p>
+                  <div className="ml-16 w-full">
+                    <Card 
+                      className="cursor-pointer hover:shadow-lg transition-all duration-300" 
+                      onClick={() => toggleTimelineItem(index)}
+                    >
+                      <div className="p-6">
+                        <div className="flex items-center justify-between">
+                          <div className="flex flex-col md:flex-row md:items-center gap-4">
+                            <Badge variant="outline" className="w-fit">{event.year}</Badge>
+                            <h4 className="text-xl font-bold font-cormorant text-darkGray">
+                              {event.title}
+                            </h4>
+                          </div>
+                          <Icon 
+                            name={expandedTimelineItem === index ? "ChevronUp" : "ChevronDown"} 
+                            size={20} 
+                            className="text-gold transition-transform duration-200"
+                          />
                         </div>
+                        {expandedTimelineItem === index && (
+                          <div className="mt-4 pt-4 border-t border-gray-200">
+                            <p className="text-gray-600 font-openSans leading-relaxed">
+                              {event.description}
+                            </p>
+                          </div>
+                        )}
                       </div>
                     </Card>
                   </div>
