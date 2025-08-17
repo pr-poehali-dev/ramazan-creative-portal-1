@@ -236,14 +236,14 @@ const Index = () => {
               />
               
               {/* Quote under photo */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center border border-white/20">
-                <Icon name="Quote" size={24} className="text-gold mx-auto mb-3" />
-                <blockquote className="text-sm text-gray-200 mb-3 font-openSans leading-relaxed italic">
+              <div className="bg-white/20 backdrop-blur-md rounded-xl p-8 text-center border-2 border-gold/30 shadow-2xl">
+                <Icon name="Quote" size={40} className="text-gold mx-auto mb-6" />
+                <blockquote className="text-lg text-white mb-6 font-openSans leading-relaxed font-medium drop-shadow-lg">
                   "Настоящий лидер должен не только управлять но и вдохновлять не только решать 
                   проблемы настоящего но и создавать основы для будущих поколений. Культура и 
                   образование — это фундамент любого прогресса."
                 </blockquote>
-                <cite className="text-gold font-semibold font-cormorant text-sm">— Рамазан Абдулатипов</cite>
+                <cite className="text-gold font-bold font-cormorant text-xl drop-shadow-md">— Рамазан Абдулатипов</cite>
               </div>
             </div>
           </div>
