@@ -50,6 +50,41 @@ const Index = () => {
       description: "Величественные горы Дагестана в экспрессивной живописной манере",
       image: "https://cdn.poehali.dev/files/06503cca-7832-4acd-b5c6-66b3f4c8a68e.jpeg",
       year: "2021"
+    },
+    {
+      id: 4,
+      title: "Осенний свет",
+      description: "Экспрессивная композиция с яркими желтыми и красными акцентами, символизирующая энергию осени",
+      image: "https://cdn.poehali.dev/files/abe30654-ce65-42ea-a9cd-eaf83af35505.jpg",
+      year: "2022"
+    },
+    {
+      id: 5,
+      title: "Сердце земли",
+      description: "Глубокая абстракция с красным центром, окруженным природными формами и цветами",
+      image: "https://cdn.poehali.dev/files/631cc71a-5e19-48c2-874f-a1f7bf19fcdb.jpeg",
+      year: "2022"
+    },
+    {
+      id: 6,
+      title: "Космические ветра",
+      description: "Динамичная композиция в бирюзовых и оранжевых тонах, напоминающая вихри в космосе",
+      image: "https://cdn.poehali.dev/files/b7ffc4d2-2ccf-4ace-9605-4e129f731262.jpeg",
+      year: "2023"
+    },
+    {
+      id: 7,
+      title: "Розовый сад",
+      description: "Яркий букет роз на солнечном фоне, выполненный в импрессионистической манере",
+      image: "https://cdn.poehali.dev/files/bf7d7a43-2335-40bd-9918-24f5e2e30abf.jpeg",
+      year: "2023"
+    },
+    {
+      id: 8,
+      title: "Вихрь страсти",
+      description: "Экспрессивная абстракция с огненными красками, отражающая внутреннюю энергию творчества",
+      image: "https://cdn.poehali.dev/files/f9bab1ef-a7b2-4e5f-a851-3e3060f684e4.jpeg",
+      year: "2024"
     }
   ];
 
