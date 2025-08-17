@@ -935,8 +935,204 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Art Gallery */}
+      <section id="gallery" className="py-20 bg-lightGray">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold text-center mb-4 font-cormorant text-darkGray">
+            Галерея живописи
+          </h2>
+          <p className="text-center text-gray-600 mb-16 max-w-2xl mx-auto font-openSans">
+            Живописные работы Рамазана Гаджимурадовича, отражающие красоту кавказской природы 
+            и глубину философских размышлений
+          </p>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {/* Painting 1 */}
+            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <CardContent className="p-0">
+                <div className="relative overflow-hidden">
+                  <img 
+                    src="https://cdn.poehali.dev/files/6bd61afb-63ed-44fe-8fdd-c4dd99f0dad9.jpeg" 
+                    alt="Абстрактная композиция с синими и красными тонами"
+                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                    <Icon name="ZoomIn" size={32} className="text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold mb-2 font-cormorant text-darkGray">
+                    Воды Каспия
+                  </h3>
+                  <p className="text-gray-600 font-openSans text-sm mb-3">
+                    Абстрактная композиция, вдохновленная морскими пейзажами родного края
+                  </p>
+                  <div className="flex gap-2">
+                    <Badge variant="secondary">Холст, масло</Badge>
+                    <Badge variant="outline">2019</Badge>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Painting 2 */}
+            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <CardContent className="p-0">
+                <div className="relative overflow-hidden">
+                  <img 
+                    src="https://cdn.poehali.dev/files/f3525173-4711-4f1f-b069-a502ef0ab489.jpeg" 
+                    alt="Пастораль с овцами на горных склонах"
+                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                    <Icon name="ZoomIn" size={32} className="text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold mb-2 font-cormorant text-darkGray">
+                    Горная пастораль
+                  </h3>
+                  <p className="text-gray-600 font-openSans text-sm mb-3">
+                    Традиционная жизнь горцев в ярких красках народного творчества
+                  </p>
+                  <div className="flex gap-2">
+                    <Badge variant="secondary">Холст, масло</Badge>
+                    <Badge variant="outline">2020</Badge>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Painting 3 */}
+            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <CardContent className="p-0">
+                <div className="relative overflow-hidden">
+                  <img 
+                    src="https://cdn.poehali.dev/files/06503cca-7832-4acd-b5c6-66b3f4c8a68e.jpeg" 
+                    alt="Горные пики в экспрессивной манере"
+                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                    <Icon name="ZoomIn" size={32} className="text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold mb-2 font-cormorant text-darkGray">
+                    Кавказские вершины
+                  </h3>
+                  <p className="text-gray-600 font-openSans text-sm mb-3">
+                    Величественные горы Дагестана в экспрессивной живописной манере
+                  </p>
+                  <div className="flex gap-2">
+                    <Badge variant="secondary">Холст, масло</Badge>
+                    <Badge variant="outline">2021</Badge>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Additional paintings placeholders */}
+            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <CardContent className="p-0">
+                <div className="relative overflow-hidden">
+                  <div className="w-full h-64 bg-gradient-to-br from-gold to-yellow-600 flex items-center justify-center">
+                    <Icon name="Image" size={48} className="text-white" />
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold mb-2 font-cormorant text-darkGray">
+                    Утренний туман
+                  </h3>
+                  <p className="text-gray-600 font-openSans text-sm mb-3">
+                    Лирический пейзаж раннего утра в горах
+                  </p>
+                  <div className="flex gap-2">
+                    <Badge variant="secondary">Холст, масло</Badge>
+                    <Badge variant="outline">2018</Badge>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <CardContent className="p-0">
+                <div className="relative overflow-hidden">
+                  <div className="w-full h-64 bg-gradient-to-br from-darkGray to-gray-600 flex items-center justify-center">
+                    <Icon name="Image" size={48} className="text-white" />
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold mb-2 font-cormorant text-darkGray">
+                    Старый Дербент
+                  </h3>
+                  <p className="text-gray-600 font-openSans text-sm mb-3">
+                    Архитектурные мотивы древнего дагестанского города
+                  </p>
+                  <div className="flex gap-2">
+                    <Badge variant="secondary">Холст, масло</Badge>
+                    <Badge variant="outline">2017</Badge>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <CardContent className="p-0">
+                <div className="relative overflow-hidden">
+                  <div className="w-full h-64 bg-gradient-to-br from-blue-500 to-teal-600 flex items-center justify-center">
+                    <Icon name="Image" size={48} className="text-white" />
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold mb-2 font-cormorant text-darkGray">
+                    Философские размышления
+                  </h3>
+                  <p className="text-gray-600 font-openSans text-sm mb-3">
+                    Абстрактное полотно, отражающее глубину мысли
+                  </p>
+                  <div className="flex gap-2">
+                    <Badge variant="secondary">Холст, масло</Badge>
+                    <Badge variant="outline">2022</Badge>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Gallery Info */}
+          <div className="bg-white rounded-lg p-8 max-w-4xl mx-auto">
+            <div className="text-center">
+              <Icon name="Palette" size={48} className="text-gold mx-auto mb-6" />
+              <h3 className="text-2xl font-bold mb-4 font-cormorant text-darkGray">
+                О творческом методе
+              </h3>
+              <p className="text-gray-600 font-openSans leading-relaxed mb-6">
+                Живописные работы Рамазана Гаджимурадовича сочетают в себе глубокое понимание 
+                традиционной кавказской культуры с современными художественными приемами. 
+                В его полотнах отражается философское восприятие мира, любовь к родной земле 
+                и стремление передать красоту горного края через призму личного опыта.
+              </p>
+              <div className="grid md:grid-cols-3 gap-6 text-center">
+                <div>
+                  <div className="text-2xl font-bold text-gold mb-2">30+</div>
+                  <div className="text-gray-600 font-openSans">Картин</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-gold mb-2">1993</div>
+                  <div className="text-gray-600 font-openSans">Год начала</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-gold mb-2">5</div>
+                  <div className="text-gray-600 font-openSans">Выставок</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Exhibitions & Events */}
-      <section className="py-20 bg-lightGray">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-12 font-cormorant text-darkGray">
             Анонсы выставок
