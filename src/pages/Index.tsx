@@ -364,6 +364,7 @@ const Index = () => {
                 </blockquote>
                 <cite className="text-gold font-black font-cormorant text-2xl drop-shadow-lg font-extrabold">— Рамазан Абдулатипов</cite>
               </div>
+              </div>
             </div>
           </div>
         </div>
