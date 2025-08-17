@@ -180,8 +180,8 @@ const Index = () => {
             </div>
             <div className="lg:w-1/2">
               <img 
-                src="/img/a8d0f2ad-ff0c-4942-b28a-52021d99017f.jpg" 
-                alt="Рамазан Абдулатипов"
+                src="https://cdn.poehali.dev/files/c7f2ea43-a593-4eea-b990-d54d215c95c0.jpeg" 
+                alt="Рамазан Гаджимурадович Абдулатипов"
                 className="rounded-lg shadow-2xl w-full max-w-md mx-auto"
               />
             </div>
