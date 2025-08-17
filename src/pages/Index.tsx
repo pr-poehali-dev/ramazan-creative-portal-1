@@ -199,15 +199,7 @@ const Index = () => {
                 alt="Рамазан Гаджимурадович Абдулатипов"
                 className="rounded-lg shadow-2xl w-full max-w-md mx-auto mb-6"
               />
-              <div className="bg-white/20 backdrop-blur-sm rounded-lg p-8 max-w-lg mx-auto border border-white/20">
-                <Icon name="Quote" size={48} className="text-gold mb-6" />
-                <blockquote className="text-white font-openSans italic text-lg leading-relaxed mb-6 font-medium">
-                  "Настоящий лидер должен не только управлять, но и вдохновлять, не только решать 
-                  проблемы настоящего, но и создавать основы для будущих поколений. Культура и 
-                  образование — это фундамент любого прогресса."
-                </blockquote>
-                <cite className="text-gold font-bold font-cormorant text-xl">— Рамазан Абдулатипов</cite>
-              </div>
+
             </div>
           </div>
         </div>
@@ -298,14 +290,14 @@ const Index = () => {
           </div>
 
           {/* Personal Philosophy */}
-          <div className="bg-lightGray rounded-lg p-8 text-center">
-            <Icon name="Quote" size={48} className="text-gold mx-auto mb-6" />
-            <blockquote className="text-xl italic text-gray-700 mb-6 font-openSans leading-relaxed max-w-3xl mx-auto">
+          <div className="bg-gradient-to-r from-gold to-yellow-500 rounded-xl p-12 text-center shadow-2xl border-4 border-yellow-400">
+            <Icon name="Quote" size={64} className="text-white mx-auto mb-8 drop-shadow-lg" />
+            <blockquote className="text-2xl font-bold text-white mb-8 font-openSans leading-relaxed max-w-4xl mx-auto drop-shadow-md">
               "Настоящий лидер должен не только управлять, но и вдохновлять, не только решать 
               проблемы настоящего, но и создавать основы для будущих поколений. Культура и 
               образование — это фундамент любого прогресса."
             </blockquote>
-            <cite className="text-darkGray font-semibold font-cormorant">— Рамазан Абдулатипов</cite>
+            <cite className="text-white font-bold font-cormorant text-2xl drop-shadow-md">— Рамазан Абдулатипов</cite>
           </div>
         </div>
       </section>
