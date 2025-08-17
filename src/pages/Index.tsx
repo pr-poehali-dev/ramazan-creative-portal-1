@@ -52,6 +52,77 @@ const Index = () => {
     }
   ];
 
+  const books = [
+    {
+      id: 1,
+      title: "Размышления о времени и вечности",
+      description: "Философские эссе о природе времени, роли личности в истории и поиске смысла бытия",
+      year: "2020",
+      pages: 384,
+      price: 1200,
+      category: "Философия",
+      isbn: "978-5-00123-456-7"
+    },
+    {
+      id: 2,
+      title: "Единство в многообразии",
+      description: "Исследование межнациональных отношений и культурного диалога на Кавказе",
+      year: "2019",
+      pages: 456,
+      price: 1500,
+      category: "Политология",
+      isbn: "978-5-00234-567-8"
+    },
+    {
+      id: 3,
+      title: "Дагестан: пути развития",
+      description: "Анализ социально-экономического развития республики и перспективы будущего",
+      year: "2018",
+      pages: 312,
+      price: 980,
+      category: "Экономика",
+      isbn: "978-5-00345-678-9"
+    },
+    {
+      id: 4,
+      title: "Горские традиции и современность",
+      description: "Культурологическое исследование традиций народов Дагестана в контексте глобализации",
+      year: "2017",
+      pages: 275,
+      price: 850,
+      category: "Культурология",
+      isbn: "978-5-00456-789-0"
+    }
+  ];
+
+  const timeline = [
+    {
+      year: "1950",
+      title: "Рождение",
+      description: "Родился в селе Доргели Хунзахского района Дагестана"
+    },
+    {
+      year: "1972",
+      title: "Окончание университета",
+      description: "Завершил обучение в Дагестанском государственном университете"
+    },
+    {
+      year: "1991-2006",
+      title: "Политическая карьера",
+      description: "Депутат Государственной Думы РФ, заместитель председателя комитета"
+    },
+    {
+      year: "2013-2017",
+      title: "Глава Дагестана",
+      description: "Руководство Республикой Дагестан, реализация крупных проектов развития"
+    },
+    {
+      year: "2015-н.в.",
+      title: "Творческий период",
+      description: "Активная литературная, художественная и музыкальная деятельность"
+    }
+  ];
+
   const togglePlay = () => {
     setIsPlaying(!isPlaying);
   };
@@ -72,7 +143,7 @@ const Index = () => {
             </div>
             <div className="hidden md:flex space-x-8">
               <a href="#biography" className="text-darkGray hover:text-gold transition-colors">Биография</a>
-              <a href="#books" className="text-darkGray hover:text-gold transition-colors">Книги</a>
+              <a href="#books-catalog" className="text-darkGray hover:text-gold transition-colors">Книги</a>
               <a href="#paintings" className="text-darkGray hover:text-gold transition-colors">Картины</a>
               <a href="#music" className="text-darkGray hover:text-gold transition-colors">Музыка</a>
               <a href="#dagestan" className="text-darkGray hover:text-gold transition-colors">Дагестан</a>
@@ -97,11 +168,11 @@ const Index = () => {
                 живописных произведений и музыкальных композиций.
               </p>
               <div className="flex gap-4">
-                <Button className="bg-gold hover:bg-yellow-600 text-white px-8 py-3">
+                <Button className="bg-gold hover:bg-yellow-600 text-white px-8 py-3" onClick={() => document.getElementById('creative')?.scrollIntoView({ behavior: 'smooth' })}>
                   <Icon name="BookOpen" size={20} className="mr-2" />
                   Творчество
                 </Button>
-                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-darkGray px-8 py-3">
+                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-darkGray px-8 py-3" onClick={() => document.getElementById('biography')?.scrollIntoView({ behavior: 'smooth' })}>
                   <Icon name="User" size={20} className="mr-2" />
                   Биография
                 </Button>
@@ -114,6 +185,87 @@ const Index = () => {
                 className="rounded-lg shadow-2xl w-full max-w-md mx-auto"
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Biography Section */}
+      <section id="biography" className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold text-center mb-4 font-cormorant text-darkGray">
+            Биография
+          </h2>
+          <p className="text-center text-gray-600 mb-16 max-w-3xl mx-auto font-openSans leading-relaxed">
+            Жизненный путь выдающегося государственного деятеля, мыслителя и творческой личности, 
+            посвятившего себя служению народу и развитию культурного наследия Дагестана
+          </p>
+          
+          {/* Early Life */}
+          <div className="grid lg:grid-cols-2 gap-12 mb-20">
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold font-cormorant text-darkGray">Ранние годы и образование</h3>
+              <p className="text-gray-600 font-openSans leading-relaxed">
+                Рамазан Гаджимурадович Абдулатипов родился 12 августа 1950 года в селе Доргели 
+                Хунзахского района Дагестана. С детства проявлял незаурядные способности к учебе 
+                и глубокий интерес к истории и культуре родного края.
+              </p>
+              <p className="text-gray-600 font-openSans leading-relaxed">
+                Получил высшее образование в Дагестанском государственном университете, где 
+                изучал философию и политологию. Уже в студенческие годы активно участвовал 
+                в общественной жизни, проявляя лидерские качества.
+              </p>
+            </div>
+            <div className="bg-gradient-to-br from-gold to-yellow-600 rounded-lg p-8 text-white">
+              <Icon name="GraduationCap" size={48} className="mb-4" />
+              <h4 className="text-xl font-bold mb-3 font-cormorant">Образование</h4>
+              <ul className="space-y-2 font-openSans">
+                <li>• Дагестанский государственный университет</li>
+                <li>• Специальность: Философия, политология</li>
+                <li>• Кандидат философских наук</li>
+                <li>• Доктор политических наук</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Timeline */}
+          <div className="mb-20">
+            <h3 className="text-3xl font-bold text-center mb-12 font-cormorant text-darkGray">
+              Основные вехи жизни
+            </h3>
+            <div className="relative">
+              <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gold"></div>
+              {timeline.map((event, index) => (
+                <div key={index} className="relative flex items-center mb-12">
+                  <div className="absolute left-0 w-8 h-8 bg-gold rounded-full flex items-center justify-center">
+                    <div className="w-3 h-3 bg-white rounded-full"></div>
+                  </div>
+                  <div className="ml-16">
+                    <Card className="p-6">
+                      <div className="flex flex-col md:flex-row md:items-center gap-4">
+                        <Badge variant="outline" className="w-fit">{event.year}</Badge>
+                        <div>
+                          <h4 className="text-xl font-bold font-cormorant text-darkGray mb-2">
+                            {event.title}
+                          </h4>
+                          <p className="text-gray-600 font-openSans">{event.description}</p>
+                        </div>
+                      </div>
+                    </Card>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Personal Philosophy */}
+          <div className="bg-lightGray rounded-lg p-8 text-center">
+            <Icon name="Quote" size={48} className="text-gold mx-auto mb-6" />
+            <blockquote className="text-xl italic text-gray-700 mb-6 font-openSans leading-relaxed max-w-3xl mx-auto">
+              "Настоящий лидер должен не только управлять, но и вдохновлять, не только решать 
+              проблемы настоящего, но и создавать основы для будущих поколений. Культура и 
+              образование — это фундамент любого прогресса."
+            </blockquote>
+            <cite className="text-darkGray font-semibold font-cormorant">— Рамазан Абдулатипов</cite>
           </div>
         </div>
       </section>
@@ -146,6 +298,10 @@ const Index = () => {
                 />
                 <Badge variant="secondary" className="mb-2">Философия</Badge>
                 <Badge variant="secondary" className="mb-2 ml-2">Политика</Badge>
+                <Button className="mt-4 bg-gold hover:bg-yellow-600 text-white" onClick={() => document.getElementById('books-catalog')?.scrollIntoView({ behavior: 'smooth' })}>
+                  <Icon name="ShoppingCart" size={16} className="mr-2" />
+                  Каталог книг
+                </Button>
               </CardContent>
             </Card>
 
@@ -354,6 +510,269 @@ const Index = () => {
                 </Card>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Books Catalog Section */}
+      <section id="books-catalog" className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold text-center mb-4 font-cormorant text-darkGray">
+            Каталог книг
+          </h2>
+          <p className="text-center text-gray-600 mb-16 max-w-2xl mx-auto font-openSans">
+            Коллекция философских и политических трудов, доступных для приобретения
+          </p>
+          
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            {books.map((book) => (
+              <Card key={book.id} className="group hover:shadow-xl transition-all duration-300">
+                <CardContent className="p-8">
+                  <div className="flex gap-6">
+                    <div className="w-24 h-32 bg-gradient-to-br from-gold to-yellow-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Icon name="Book" size={32} className="text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <Badge variant="outline" className="mb-3">{book.category}</Badge>
+                      <h3 className="text-xl font-bold mb-3 font-cormorant text-darkGray group-hover:text-gold transition-colors">
+                        {book.title}
+                      </h3>
+                      <p className="text-gray-600 font-openSans text-sm mb-4 leading-relaxed">
+                        {book.description}
+                      </p>
+                      <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
+                        <span>Год: {book.year}</span>
+                        <span>•</span>
+                        <span>Страниц: {book.pages}</span>
+                        <span>•</span>
+                        <span>ISBN: {book.isbn}</span>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <div className="text-2xl font-bold text-gold">
+                          {book.price} ₽
+                        </div>
+                        <Button className="bg-gold hover:bg-yellow-600 text-white">
+                          <Icon name="ShoppingCart" size={16} className="mr-2" />
+                          Заказать
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* Order Form */}
+          <Card className="max-w-2xl mx-auto bg-lightGray">
+            <CardContent className="p-8">
+              <h3 className="text-2xl font-bold mb-6 font-cormorant text-darkGray text-center">
+                Форма заказа
+              </h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-semibold text-darkGray mb-2">Имя</label>
+                  <input 
+                    type="text" 
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent"
+                    placeholder="Ваше имя"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-darkGray mb-2">Телефон</label>
+                  <input 
+                    type="tel" 
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent"
+                    placeholder="+7 (999) 123-45-67"
+                  />
+                </div>
+                <div className="md:col-span-2">
+                  <label className="block text-sm font-semibold text-darkGray mb-2">Email</label>
+                  <input 
+                    type="email" 
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent"
+                    placeholder="your@email.com"
+                  />
+                </div>
+                <div className="md:col-span-2">
+                  <label className="block text-sm font-semibold text-darkGray mb-2">Какую книгу хотите заказать?</label>
+                  <select className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent">
+                    <option>Выберите книгу</option>
+                    {books.map((book) => (
+                      <option key={book.id} value={book.id}>
+                        {book.title} - {book.price} ₽
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div className="md:col-span-2">
+                  <label className="block text-sm font-semibold text-darkGray mb-2">Сообщение</label>
+                  <textarea 
+                    rows={4}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent"
+                    placeholder="Дополнительные пожелания..."
+                  ></textarea>
+                </div>
+                <div className="md:col-span-2 text-center">
+                  <Button className="bg-gold hover:bg-yellow-600 text-white px-12 py-3">
+                    <Icon name="Send" size={20} className="mr-2" />
+                    Отправить заказ
+                  </Button>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Video Testimonials Section */}
+      <section className="py-20 bg-lightGray">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold text-center mb-4 font-cormorant text-darkGray">
+            Видео-отзывы и интервью
+          </h2>
+          <p className="text-center text-gray-600 mb-16 max-w-2xl mx-auto font-openSans">
+            Личные свидетельства коллег и друзей о деятельности Рамазана Гаджимурадовича
+          </p>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Video 1 */}
+            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <CardContent className="p-0">
+                <div className="relative">
+                  <div className="w-full h-48 bg-gradient-to-br from-darkGray to-gray-800 rounded-t-lg flex items-center justify-center">
+                    <Icon name="Play" size={48} className="text-gold" />
+                  </div>
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 rounded-t-lg flex items-center justify-center">
+                    <Icon name="PlayCircle" size={64} className="text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold mb-2 font-cormorant text-darkGray">
+                    Коллега по госслужбе
+                  </h3>
+                  <p className="text-gray-600 font-openSans text-sm mb-3">
+                    Воспоминания о совместной работе в Государственной Думе
+                  </p>
+                  <Badge variant="secondary">5:32</Badge>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Video 2 */}
+            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <CardContent className="p-0">
+                <div className="relative">
+                  <div className="w-full h-48 bg-gradient-to-br from-darkGray to-gray-800 rounded-t-lg flex items-center justify-center">
+                    <Icon name="Play" size={48} className="text-gold" />
+                  </div>
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 rounded-t-lg flex items-center justify-center">
+                    <Icon name="PlayCircle" size={64} className="text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold mb-2 font-cormorant text-darkGray">
+                    Художник-коллега
+                  </h3>
+                  <p className="text-gray-600 font-openSans text-sm mb-3">
+                    О творческом пути и художественном видении
+                  </p>
+                  <Badge variant="secondary">7:18</Badge>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Video 3 */}
+            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <CardContent className="p-0">
+                <div className="relative">
+                  <div className="w-full h-48 bg-gradient-to-br from-darkGray to-gray-800 rounded-t-lg flex items-center justify-center">
+                    <Icon name="Play" size={48} className="text-gold" />
+                  </div>
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 rounded-t-lg flex items-center justify-center">
+                    <Icon name="PlayCircle" size={64} className="text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold mb-2 font-cormorant text-darkGray">
+                    Житель Дагестана
+                  </h3>
+                  <p className="text-gray-600 font-openSans text-sm mb-3">
+                    Благодарность за вклад в развитие республики
+                  </p>
+                  <Badge variant="secondary">4:45</Badge>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Video 4 */}
+            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <CardContent className="p-0">
+                <div className="relative">
+                  <div className="w-full h-48 bg-gradient-to-br from-darkGray to-gray-800 rounded-t-lg flex items-center justify-center">
+                    <Icon name="Play" size={48} className="text-gold" />
+                  </div>
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 rounded-t-lg flex items-center justify-center">
+                    <Icon name="PlayCircle" size={64} className="text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold mb-2 font-cormorant text-darkGray">
+                    Музыкант
+                  </h3>
+                  <p className="text-gray-600 font-openSans text-sm mb-3">
+                    О музыкальном творчестве и любви к народным мелодиям
+                  </p>
+                  <Badge variant="secondary">6:22</Badge>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Video 5 */}
+            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <CardContent className="p-0">
+                <div className="relative">
+                  <div className="w-full h-48 bg-gradient-to-br from-darkGray to-gray-800 rounded-t-lg flex items-center justify-center">
+                    <Icon name="Play" size={48} className="text-gold" />
+                  </div>
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 rounded-t-lg flex items-center justify-center">
+                    <Icon name="PlayCircle" size={64} className="text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold mb-2 font-cormorant text-darkGray">
+                    Историк
+                  </h3>
+                  <p className="text-gray-600 font-openSans text-sm mb-3">
+                    Анализ исторического значения деятельности
+                  </p>
+                  <Badge variant="secondary">8:10</Badge>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Video 6 */}
+            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <CardContent className="p-0">
+                <div className="relative">
+                  <div className="w-full h-48 bg-gradient-to-br from-darkGray to-gray-800 rounded-t-lg flex items-center justify-center">
+                    <Icon name="Play" size={48} className="text-gold" />
+                  </div>
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 rounded-t-lg flex items-center justify-center">
+                    <Icon name="PlayCircle" size={64} className="text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold mb-2 font-cormorant text-darkGray">
+                    Философ
+                  </h3>
+                  <p className="text-gray-600 font-openSans text-sm mb-3">
+                    О философских взглядах и литературном наследии
+                  </p>
+                  <Badge variant="secondary">9:33</Badge>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
