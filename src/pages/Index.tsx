@@ -280,6 +280,136 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Dagestan Legacy Section */}
+      <section id="dagestan" className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl font-bold mb-6 font-cormorant text-darkGray">
+              Деятельность в Дагестане
+            </h2>
+            <p className="text-xl text-gray-600 mb-4 font-openSans leading-relaxed">
+              В 2013 году, когда Абдулатипов возглавил Дагестан, республика считалась 
+              одним из самых сложных регионов России. Период руководства ознаменовался 
+              реализацией масштабных проектов развития региона, укрепления межнационального 
+              согласия и культурного возрождения.
+            </p>
+            
+            <div className="bg-gold/10 rounded-lg p-6 mb-12 text-left">
+              <h3 className="text-2xl font-bold mb-4 font-cormorant text-darkGray text-center">
+                Ключевые достижения и реформы
+              </h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 bg-gold rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <span className="text-white text-sm font-bold">1</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-darkGray mb-1">Борьба с коррупцией</h4>
+                      <p className="text-gray-600 font-openSans text-sm">Реформировал управление, обновил исполнительные органы и усилил контроль над чиновниками</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 bg-gold rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <span className="text-white text-sm font-bold">2</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-darkGray mb-1">Инфраструктурное развитие</h4>
+                      <p className="text-gray-600 font-openSans text-sm">Строительство и реконструкция дорог, коммуникаций, социальных объектов (школ, больниц, детсадов, спорткомплексов)</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 bg-gold rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <span className="text-white text-sm font-bold">3</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-darkGray mb-1">Развитие сельского хозяйства</h4>
+                      <p className="text-gray-600 font-openSans text-sm">Программы поддержки аграриев, модернизация агрокомплексов, внедрение новых технологий, поддержка малых фермеров</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 bg-gold rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <span className="text-white text-sm font-bold">4</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-darkGray mb-1">Образование и культура</h4>
+                      <p className="text-gray-600 font-openSans text-sm">Открытие новых образовательных учреждений, ремонт школ и вузов, внедрение современных программ, поддержка культуры и традиций</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 bg-gold rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <span className="text-white text-sm font-bold">5</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-darkGray mb-1">Безопасность и согласие</h4>
+                      <p className="text-gray-600 font-openSans text-sm">Приоритет безопасности, снижение экстремизма, укрепление межнационального согласия и диалог между этническими и религиозными группами</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 bg-gold rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <span className="text-white text-sm font-bold">6</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-darkGray mb-1">Экономическое развитие</h4>
+                      <p className="text-gray-600 font-openSans text-sm">Проекты для развития промышленности, бизнеса, привлечения инвестиций, создание экономических зон и индустриальных парков</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 bg-gold rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <span className="text-white text-sm font-bold">7</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-darkGray mb-1">Молодежь и спорт</h4>
+                      <p className="text-gray-600 font-openSans text-sm">Молодежные и спортивные программы, строительство спортобъектов, популяризация здорового образа жизни</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
+              <Card className="text-left hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <Icon name="Shield" size={32} className="text-gold mb-4" />
+                  <h3 className="text-lg font-bold mb-3 font-cormorant">Стабилизация региона</h3>
+                  <p className="text-gray-600 font-openSans text-sm">
+                    Значительное улучшение ситуации с безопасностью и снижение социальной напряженности
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card className="text-left hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <Icon name="TrendingUp" size={32} className="text-gold mb-4" />
+                  <h3 className="text-lg font-bold mb-3 font-cormorant">Экономический рост</h3>
+                  <p className="text-gray-600 font-openSans text-sm">
+                    Привлечение инвестиций и создание новых рабочих мест в различных отраслях экономики
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card className="text-left hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <Icon name="Heart" size={32} className="text-gold mb-4" />
+                  <h3 className="text-lg font-bold mb-3 font-cormorant">Социальное развитие</h3>
+                  <p className="text-gray-600 font-openSans text-sm">
+                    Улучшение качества жизни населения через развитие образования, здравоохранения и культуры
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Creative Works Section */}
       <section id="creative" className="py-20">
         <div className="container mx-auto px-6">
@@ -780,136 +910,6 @@ const Index = () => {
                 </div>
               </CardContent>
             </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Dagestan Legacy Section */}
-      <section id="dagestan" className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-6 font-cormorant text-darkGray">
-              Деятельность в Дагестане
-            </h2>
-            <p className="text-xl text-gray-600 mb-4 font-openSans leading-relaxed">
-              В 2013 году, когда Абдулатипов возглавил Дагестан, республика считалась 
-              одним из самых сложных регионов России. Период руководства ознаменовался 
-              реализацией масштабных проектов развития региона, укрепления межнационального 
-              согласия и культурного возрождения.
-            </p>
-            
-            <div className="bg-gold/10 rounded-lg p-6 mb-12 text-left">
-              <h3 className="text-2xl font-bold mb-4 font-cormorant text-darkGray text-center">
-                Ключевые достижения и реформы
-              </h3>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-gold rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-white text-sm font-bold">1</span>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-darkGray mb-1">Борьба с коррупцией</h4>
-                      <p className="text-gray-600 font-openSans text-sm">Реформировал управление, обновил исполнительные органы и усилил контроль над чиновниками</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-gold rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-white text-sm font-bold">2</span>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-darkGray mb-1">Инфраструктурное развитие</h4>
-                      <p className="text-gray-600 font-openSans text-sm">Строительство и реконструкция дорог, коммуникаций, социальных объектов (школ, больниц, детсадов, спорткомплексов)</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-gold rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-white text-sm font-bold">3</span>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-darkGray mb-1">Развитие сельского хозяйства</h4>
-                      <p className="text-gray-600 font-openSans text-sm">Программы поддержки аграриев, модернизация агрокомплексов, внедрение новых технологий, поддержка малых фермеров</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-gold rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-white text-sm font-bold">4</span>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-darkGray mb-1">Образование и культура</h4>
-                      <p className="text-gray-600 font-openSans text-sm">Открытие новых образовательных учреждений, ремонт школ и вузов, внедрение современных программ, поддержка культуры и традиций</p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-gold rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-white text-sm font-bold">5</span>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-darkGray mb-1">Безопасность и согласие</h4>
-                      <p className="text-gray-600 font-openSans text-sm">Приоритет безопасности, снижение экстремизма, укрепление межнационального согласия и диалог между этническими и религиозными группами</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-gold rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-white text-sm font-bold">6</span>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-darkGray mb-1">Экономическое развитие</h4>
-                      <p className="text-gray-600 font-openSans text-sm">Проекты для развития промышленности, бизнеса, привлечения инвестиций, создание экономических зон и индустриальных парков</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-gold rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-white text-sm font-bold">7</span>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-darkGray mb-1">Молодежь и спорт</h4>
-                      <p className="text-gray-600 font-openSans text-sm">Молодежные и спортивные программы, строительство спортобъектов, популяризация здорового образа жизни</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              <Card className="text-left hover:shadow-lg transition-shadow">
-                <CardContent className="p-6">
-                  <Icon name="Shield" size={32} className="text-gold mb-4" />
-                  <h3 className="text-lg font-bold mb-3 font-cormorant">Стабилизация региона</h3>
-                  <p className="text-gray-600 font-openSans text-sm">
-                    Значительное улучшение ситуации с безопасностью и снижение социальной напряженности
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card className="text-left hover:shadow-lg transition-shadow">
-                <CardContent className="p-6">
-                  <Icon name="TrendingUp" size={32} className="text-gold mb-4" />
-                  <h3 className="text-lg font-bold mb-3 font-cormorant">Экономический рост</h3>
-                  <p className="text-gray-600 font-openSans text-sm">
-                    Привлечение инвестиций и создание новых рабочих мест в различных отраслях экономики
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card className="text-left hover:shadow-lg transition-shadow">
-                <CardContent className="p-6">
-                  <Icon name="Heart" size={32} className="text-gold mb-4" />
-                  <h3 className="text-lg font-bold mb-3 font-cormorant">Социальное развитие</h3>
-                  <p className="text-gray-600 font-openSans text-sm">
-                    Улучшение качества жизни населения через развитие образования, здравоохранения и культуры
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
           </div>
         </div>
       </section>
