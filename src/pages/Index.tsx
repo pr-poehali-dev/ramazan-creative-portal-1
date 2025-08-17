@@ -242,7 +242,7 @@ const Index = () => {
                   проблемы настоящего но и создавать основы для будущих поколений. Культура и 
                   образование — это фундамент любого прогресса."
                 </blockquote>
-                <cite className="text-gold font-black font-cormorant text-xl drop-shadow-md">— Рамазан Абдулатипов</cite>
+                <cite className="text-gold font-black font-cormorant text-2xl drop-shadow-lg font-extrabold">— Рамазан Абдулатипов</cite>
               </div>
             </div>
           </div>
