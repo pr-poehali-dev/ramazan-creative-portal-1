@@ -813,8 +813,10 @@ const Index = () => {
           
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             {books.map((book) => (
-              <Card key={book.id} className="group hover:shadow-xl transition-all duration-300 hover:scale-105 relative">
-                <CardContent className="p-8">
+              <Dialog key={book.id}>
+                <DialogTrigger asChild>
+                  <Card className="group hover:shadow-xl transition-all duration-300 hover:scale-105 relative cursor-pointer">
+                    <CardContent className="p-8">
                   <div className="flex gap-6">
                     <div className="w-24 h-32 rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden group-hover:scale-110 transition-transform duration-300">
                       {book.image ? (
@@ -861,6 +863,52 @@ const Index = () => {
                   </div>
                 </CardContent>
               </Card>
+                </DialogTrigger>
+                <DialogContent className="max-w-4xl">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      {book.image ? (
+                        <img 
+                          src={book.image} 
+                          alt={book.title}
+                          className="w-full rounded-lg"
+                        />
+                      ) : (
+                        <div className="w-full h-96 bg-gradient-to-br from-gold to-yellow-600 rounded-lg flex items-center justify-center">
+                          <Icon name="Book" size={64} className="text-white" />
+                        </div>
+                      )}
+                    </div>
+                    <div className="space-y-4">
+                      <Badge variant="outline">{book.category}</Badge>
+                      <h3 className="text-3xl font-bold font-cormorant text-darkGray">{book.title}</h3>
+                      <p className="text-gray-600 font-openSans leading-relaxed">{book.description}</p>
+                      <div className="border-t pt-4 space-y-2">
+                        <div className="flex justify-between">
+                          <span className="font-semibold">Год издания:</span>
+                          <span>{book.year}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="font-semibold">Страниц:</span>
+                          <span>{book.pages}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="font-semibold">ISBN:</span>
+                          <span>{book.isbn}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="font-semibold">Цена:</span>
+                          <span className="text-gold font-bold">{book.price} ₽</span>
+                        </div>
+                      </div>
+                      <Button className="bg-gold hover:bg-yellow-600 text-white w-full">
+                        <Icon name="ShoppingCart" size={16} className="mr-2" />
+                        Заказать за {book.price} ₽
+                      </Button>
+                    </div>
+                  </div>
+                </DialogContent>
+              </Dialog>
             ))}
           </div>
 
@@ -1078,106 +1126,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Art Gallery */}
-      <section id="gallery" className="py-20 bg-lightGray">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-4 font-cormorant text-darkGray">
-            Галерея живописи
-          </h2>
-          <p className="text-center text-gray-600 mb-16 max-w-2xl mx-auto font-openSans">
-            Живописные работы Рамазана Гаджимурадовича, отражающие красоту кавказской природы 
-            и глубину философских размышлений
-          </p>
-          
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {paintings.map((painting) => (
-              <Card key={painting.id} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <CardContent className="p-0">
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <div className="relative overflow-hidden cursor-pointer">
-                        <img 
-                          src={painting.image} 
-                          alt={painting.title}
-                          className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-                        />
-                        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
-                          <Icon name="ZoomIn" size={32} className="text-white opacity-0 group-hover:opacity-100 transition-opacity" />
-                        </div>
-                      </div>
-                    </DialogTrigger>
-                    <DialogContent className="max-w-4xl w-full">
-                      <div className="space-y-4">
-                        <img 
-                          src={painting.image} 
-                          alt={painting.title}
-                          className="w-full h-auto rounded-lg"
-                        />
-                        <div>
-                          <h3 className="text-2xl font-bold mb-2 font-cormorant text-darkGray">
-                            {painting.title}
-                          </h3>
-                          <p className="text-gray-600 font-openSans mb-4">
-                            {painting.description}
-                          </p>
-                          <div className="flex gap-2">
-                            <Badge variant="secondary">Холст, масло</Badge>
-                            <Badge variant="outline">{painting.year}</Badge>
-                          </div>
-                        </div>
-                      </div>
-                    </DialogContent>
-                  </Dialog>
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold mb-2 font-cormorant text-darkGray">
-                      {painting.title}
-                    </h3>
-                    <p className="text-gray-600 font-openSans text-sm mb-3">
-                      {painting.description}
-                    </p>
-                    <div className="flex gap-2">
-                      <Badge variant="secondary">Холст, масло</Badge>
-                      <Badge variant="outline">{painting.year}</Badge>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
 
-
-          </div>
-
-          {/* Gallery Info */}
-          <div className="bg-white rounded-lg p-8 max-w-4xl mx-auto">
-            <div className="text-center">
-              <Icon name="Palette" size={48} className="text-gold mx-auto mb-6" />
-              <h3 className="text-2xl font-bold mb-4 font-cormorant text-darkGray">
-                О творческом методе
-              </h3>
-              <p className="text-gray-600 font-openSans leading-relaxed mb-6">
-                Живописные работы Рамазана Гаджимурадовича сочетают в себе глубокое понимание 
-                традиционной кавказской культуры с современными художественными приемами. 
-                В его полотнах отражается философское восприятие мира, любовь к родной земле 
-                и стремление передать красоту горного края через призму личного опыта.
-              </p>
-              <div className="grid md:grid-cols-3 gap-6 text-center">
-                <div>
-                  <div className="text-2xl font-bold text-gold mb-2">30+</div>
-                  <div className="text-gray-600 font-openSans">Картин</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-gold mb-2">1993</div>
-                  <div className="text-gray-600 font-openSans">Год начала</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-gold mb-2">5</div>
-                  <div className="text-gray-600 font-openSans">Выставок</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Exhibitions & Events */}
       <section className="py-20 bg-white">
