@@ -85,6 +85,34 @@ const Index = () => {
       description: "Экспрессивная абстракция с огненными красками, отражающая внутреннюю энергию творчества",
       image: "https://cdn.poehali.dev/files/f9bab1ef-a7b2-4e5f-a851-3e3060f684e4.jpeg",
       year: "2024"
+    },
+    {
+      id: 9,
+      title: "Осенний лес",
+      description: "Яркая экспрессивная работа с красно-оранжевыми кронами деревьев на изумрудном фоне",
+      image: "https://cdn.poehali.dev/files/029268b8-89ed-4027-b95a-7c2b65a4fe42.jpg",
+      year: "2024"
+    },
+    {
+      id: 10,
+      title: "Радужный поток",
+      description: "Динамичная абстракция с яркими полосами цвета, символизирующая движение жизни",
+      image: "https://cdn.poehali.dev/files/b98c33bc-4306-48bf-92e4-16b15157282b.jpeg",
+      year: "2024"
+    },
+    {
+      id: 11,
+      title: "Красный цветок",
+      description: "Нежная работа с одиноким красным цветком на фоне голубого неба и золотого поля",
+      image: "https://cdn.poehali.dev/files/95ceff4c-abd3-48f4-8b82-d7945d5e4ec6.jpeg",
+      year: "2024"
+    },
+    {
+      id: 12,
+      title: "Горные вершины",
+      description: "Мощная экспрессивная композиция с острыми пиками в ярких зелено-красных тонах",
+      image: "https://cdn.poehali.dev/files/8f0d913a-b971-4c0d-b1dd-b02013104f81.jpeg",
+      year: "2024"
     }
   ];
 
