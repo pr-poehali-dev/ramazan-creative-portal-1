@@ -292,10 +292,14 @@ const Index = () => {
     <div className="min-h-screen bg-lightGray">
       {/* Header */}
       <header className="bg-white shadow-sm">
-        <div className="container mx-auto px-6 py-4">
+        <div className="container mx-auto px-6 py-3">
           <nav className="flex items-center justify-between">
-            <div className="text-2xl font-bold text-darkGray font-cormorant">
-              Рамазан Абдулатипов
+            <div className="flex items-center">
+              <img 
+                src="https://cdn.poehali.dev/files/5858ccee-8393-4f91-af21-1c6b4f51a0f8.jpg" 
+                alt="Логотип Рамазана Абдулатипова" 
+                className="h-16 w-auto"
+              />
             </div>
             <div className="hidden md:flex space-x-8">
               <a href="#biography" className="text-darkGray hover:text-gold transition-colors">Биография</a>
@@ -335,11 +339,21 @@ const Index = () => {
               </div>
             </div>
             <div className="lg:w-1/2">
-              <img 
-                src="https://cdn.poehali.dev/files/c7f2ea43-a593-4eea-b990-d54d215c95c0.jpeg" 
-                alt="Рамазан Гаджимурадович Абдулатипов"
+              <div className="relative">
+                <img 
+                  src="https://cdn.poehali.dev/files/c7f2ea43-a593-4eea-b990-d54d215c95c0.jpeg" 
+                  alt="Рамазан Гаджимурадович Абдулатипов"
                 className="rounded-lg shadow-2xl w-full max-w-md mx-auto mb-6"
               />
+              
+              {/* Brand Logo */}
+              <div className="flex justify-center mb-6">
+                <img 
+                  src="https://cdn.poehali.dev/files/5858ccee-8393-4f91-af21-1c6b4f51a0f8.jpg" 
+                  alt="Логотип Рамазана Абдулатипова" 
+                  className="h-24 w-auto opacity-90 hover:opacity-100 transition-opacity duration-300"
+                />
+              </div>
               
               {/* Quote under photo */}
               <div className="bg-white/20 backdrop-blur-md rounded-xl p-8 text-center border-2 border-gold/30 shadow-2xl">
@@ -351,6 +365,30 @@ const Index = () => {
                 <cite className="text-gold font-black font-cormorant text-2xl drop-shadow-lg font-extrabold">— Рамазан Абдулатипов</cite>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Brand Section */}
+      <section className="py-16 bg-gradient-to-br from-amber-50 to-yellow-50">
+        <div className="container mx-auto px-6">
+          <div className="text-center">
+            <div className="flex justify-center mb-8">
+              <img 
+                src="https://cdn.poehali.dev/files/5858ccee-8393-4f91-af21-1c6b4f51a0f8.jpg" 
+                alt="Логотип Рамазана Абдулатипова" 
+                className="h-32 w-auto drop-shadow-lg hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <h2 className="text-3xl font-bold mb-4 font-cormorant text-darkGray">
+              Творческое наследие и культурные инициативы
+            </h2>
+            <p className="text-lg text-gray-700 max-w-4xl mx-auto font-openSans leading-relaxed">
+              Уникальное сочетание государственной деятельности, литературного творчества, 
+              художественного мастерства и музыкального таланта. Логотип символизирует единство 
+              всех граней творческой личности — от пера писателя до кисти художника, 
+              от музыкальной ноты до открытой книги знаний.
+            </p>
           </div>
         </div>
       </section>
@@ -1283,9 +1321,16 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-black text-white py-8">
+      <footer className="bg-black text-white py-12">
         <div className="container mx-auto px-6 text-center">
-          <p className="font-openSans">
+          <div className="flex justify-center mb-6">
+            <img 
+              src="https://cdn.poehali.dev/files/5858ccee-8393-4f91-af21-1c6b4f51a0f8.jpg" 
+              alt="Логотип Рамазана Абдулатипова" 
+              className="h-20 w-auto opacity-80 hover:opacity-100 transition-opacity duration-300"
+            />
+          </div>
+          <p className="font-openSans text-gray-300">
             © 2024 Рамазан Абдулатипов. Все права защищены.
           </p>
         </div>
