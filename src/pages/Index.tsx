@@ -7,27 +7,58 @@ import { useState, useRef } from "react";
 
 const Index = () => {
   const [currentTrack, setCurrentTrack] = useState(0);
+  const [currentAlbum, setCurrentAlbum] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [expandedTimelineItem, setExpandedTimelineItem] = useState<number | null>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
 
-  const musicTracks = [
+  const albums = [
     {
-      title: "Горные напевы",
-      description: "Традиционная мелодия Дагестана",
-      duration: "3:45"
+      id: 0,
+      title: "Мелодии Цамаури",
+      description: "Первый альбом с традиционными мелодиями",
+      tracks: [
+        { title: "Дагестан-моя молитва", duration: "4:15" },
+        { title: "Возвращение", duration: "3:42" },
+        { title: "Истина покоя", duration: "5:23" },
+        { title: "Танец", duration: "3:18" },
+        { title: "Дорога в молодость", duration: "4:07" },
+        { title: "Чувство", duration: "3:55" },
+        { title: "Аббасиния", duration: "4:31" },
+        { title: "Весна пришла", duration: "3:29" },
+        { title: "Утро в ауле", duration: "4:44" },
+        { title: "Звонкая тоска", duration: "3:12" },
+        { title: "Цветок Памира", duration: "5:08" }
+      ]
     },
     {
-      title: "Размышления о времени",
-      description: "Философская композиция",
-      duration: "4:12"
-    },
-    {
-      title: "Единство народов",
-      description: "Гимн межнационального согласия",
-      duration: "5:20"
+      id: 1,
+      title: "Душа Востока",
+      description: "Второй альбом с восточными мотивами",
+      tracks: [
+        { title: "Восточный караван", duration: "4:22" },
+        { title: "Дагестан", duration: "3:58" },
+        { title: "Родной край", duration: "4:41" },
+        { title: "Сабаб", duration: "3:33" },
+        { title: "Прощание", duration: "5:15" },
+        { title: "Тляратинка", duration: "3:47" },
+        { title: "Полет над Москвой", duration: "4:29" },
+        { title: "Тайная любовь", duration: "3:24" },
+        { title: "Аведия", duration: "4:03" },
+        { title: "Воспоминания", duration: "5:37" },
+        { title: "Марта", duration: "3:51" },
+        { title: "Аминка", duration: "3:16" },
+        { title: "Вальс матери", duration: "4:54" },
+        { title: "Ритмы Памира", duration: "3:39" },
+        { title: "Айша", duration: "4:18" },
+        { title: "Мама", duration: "5:02" },
+        { title: "Иннарь", duration: "3:43" }
+      ]
     }
   ];
+
+  const currentAlbumData = albums[currentAlbum];
+  const currentTrackData = currentAlbumData.tracks[currentTrack];
 
   const paintings = [
     {
@@ -170,7 +201,6 @@ const Index = () => {
       description: "Философские размышления о национальной идентичности и пути развития России",
       year: "2021",
       pages: 392,
-      price: 1480,
       category: "Философия",
       isbn: "978-5-00678-901-2",
       image: "https://cdn.poehali.dev/files/6686fdec-4113-4327-be17-6108b4ba2400.jpeg"
@@ -181,7 +211,6 @@ const Index = () => {
       description: "Политические мемуары и размышления о роли морали в государственном управлении",
       year: "2020",
       pages: 356,
-      price: 1260,
       category: "Политика",
       isbn: "978-5-00789-012-3",
       image: "https://cdn.poehali.dev/files/fcee1e96-a1b2-4f36-86dc-64489c36a244.jpg"
@@ -192,7 +221,6 @@ const Index = () => {
       description: "Сборник мудрых изречений и жизненных наблюдений",
       year: "2022",
       pages: 248,
-      price: 890,
       category: "Афоризмы",
       isbn: "978-5-00890-123-4",
       image: "https://cdn.poehali.dev/files/a2f0c304-8cac-483e-99f7-076b5fcc80ac.jpeg"
@@ -203,7 +231,6 @@ const Index = () => {
       description: "Поэтические размышления о смысле жизни, любви и творчестве",
       year: "2023",
       pages: 312,
-      price: 1150,
       category: "Поэзия",
       isbn: "978-5-00901-234-5",
       image: "https://cdn.poehali.dev/files/abb8a252-0340-436d-8c46-1429644b3a4c.jpg"
@@ -706,13 +733,39 @@ const Index = () => {
             Мелодии, вдохновленные народными традициями и философскими размышлениями
           </p>
           
-          <div className="max-w-2xl mx-auto">
+          <div className="max-w-4xl mx-auto">
+            {/* Album Tabs */}
+            <div className="flex justify-center mb-8">
+              <div className="flex bg-white rounded-lg p-1 shadow-lg">
+                {albums.map((album, index) => (
+                  <Button
+                    key={album.id}
+                    variant={currentAlbum === index ? "default" : "ghost"}
+                    className={`px-6 py-3 rounded-md transition-all duration-200 font-cormorant ${
+                      currentAlbum === index 
+                        ? 'bg-gold text-white hover:bg-yellow-600' 
+                        : 'text-darkGray hover:bg-gray-100'
+                    }`}
+                    onClick={() => {
+                      setCurrentAlbum(index);
+                      setCurrentTrack(0);
+                      setIsPlaying(false);
+                    }}
+                  >
+                    {album.title}
+                  </Button>
+                ))}
+              </div>
+            </div>
+
+            <div className="max-w-2xl mx-auto">
             {/* Current Track Display */}
             <Card className="mb-8 bg-gradient-to-r from-darkGray to-gray-800 text-white">
               <CardContent className="p-8 text-center">
                 <Icon name="Music" size={48} className="text-gold mx-auto mb-4" />
-                <h3 className="text-2xl font-bold mb-2 font-cormorant">{musicTracks[currentTrack].title}</h3>
-                <p className="text-gray-300 mb-6 font-openSans">{musicTracks[currentTrack].description}</p>
+                <h3 className="text-2xl font-bold mb-2 font-cormorant">{currentTrackData.title}</h3>
+                <p className="text-gray-300 mb-2 font-openSans">Альбом: {currentAlbumData.title}</p>
+                <p className="text-gray-400 mb-6 font-openSans text-sm">{currentAlbumData.description}</p>
                 
                 {/* Player Controls */}
                 <div className="flex items-center justify-center gap-4 mb-6">
@@ -720,7 +773,7 @@ const Index = () => {
                     variant="ghost" 
                     size="icon" 
                     className="text-white hover:text-gold"
-                    onClick={() => selectTrack(currentTrack > 0 ? currentTrack - 1 : musicTracks.length - 1)}
+                    onClick={() => selectTrack(currentTrack > 0 ? currentTrack - 1 : currentAlbumData.tracks.length - 1)}
                   >
                     <Icon name="SkipBack" size={24} />
                   </Button>
@@ -737,7 +790,7 @@ const Index = () => {
                     variant="ghost" 
                     size="icon" 
                     className="text-white hover:text-gold"
-                    onClick={() => selectTrack(currentTrack < musicTracks.length - 1 ? currentTrack + 1 : 0)}
+                    onClick={() => selectTrack(currentTrack < currentAlbumData.tracks.length - 1 ? currentTrack + 1 : 0)}
                   >
                     <Icon name="SkipForward" size={24} />
                   </Button>
@@ -750,14 +803,14 @@ const Index = () => {
                 
                 <div className="flex justify-between text-sm text-gray-300">
                   <span>1:15</span>
-                  <span>{musicTracks[currentTrack].duration}</span>
+                  <span>{currentTrackData.duration}</span>
                 </div>
               </CardContent>
             </Card>
             
             {/* Track List */}
-            <div className="space-y-2">
-              {musicTracks.map((track, index) => (
+            <div className="grid md:grid-cols-2 gap-4">
+              {currentAlbumData.tracks.map((track, index) => (
                 <Card 
                   key={index} 
                   className={`cursor-pointer transition-all duration-200 ${
@@ -767,20 +820,22 @@ const Index = () => {
                 >
                   <CardContent className="p-4">
                     <div className="flex items-center justify-between">
-                      <div>
-                        <h4 className={`font-semibold font-cormorant ${
-                          index === currentTrack ? 'text-white' : 'text-darkGray'
+                      <div className="flex items-center gap-3">
+                        <span className={`text-sm font-bold w-6 text-center ${
+                          index === currentTrack ? 'text-white' : 'text-gray-400'
                         }`}>
-                          {track.title}
-                        </h4>
-                        <p className={`text-sm font-openSans ${
-                          index === currentTrack ? 'text-yellow-100' : 'text-gray-600'
-                        }`}>
-                          {track.description}
-                        </p>
+                          {index + 1}
+                        </span>
+                        <div>
+                          <h4 className={`font-semibold font-cormorant ${
+                            index === currentTrack ? 'text-white' : 'text-darkGray'
+                          }`}>
+                            {track.title}
+                          </h4>
+                        </div>
                       </div>
                       <div className="flex items-center gap-3">
-                        <span className={`text-sm ${
+                        <span className={`text-sm font-openSans ${
                           index === currentTrack ? 'text-yellow-100' : 'text-gray-500'
                         }`}>
                           {track.duration}
