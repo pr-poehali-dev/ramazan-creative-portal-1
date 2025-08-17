@@ -244,14 +244,14 @@ const Index = () => {
           </div>
 
           {/* Personal Philosophy */}
-          <div className="bg-gradient-to-r from-gold to-yellow-500 rounded-xl p-12 text-center shadow-2xl border-4 border-yellow-400 mb-20">
-            <Icon name="Quote" size={80} className="text-white mx-auto mb-8 drop-shadow-lg" />
-            <blockquote className="text-3xl font-bold text-white mb-8 font-openSans leading-relaxed max-w-5xl mx-auto drop-shadow-md">
-              "Настоящий лидер должен не только управлять, но и вдохновлять, не только решать 
-              проблемы настоящего, но и создавать основы для будущих поколений. Культура и 
+          <div className="bg-slate-100 rounded-lg p-8 text-center shadow-md border border-slate-200 mb-16 max-w-3xl mx-auto">
+            <Icon name="Quote" size={32} className="text-slate-600 mx-auto mb-4" />
+            <blockquote className="text-lg text-slate-700 mb-4 font-openSans leading-relaxed italic">
+              "Настоящий лидер должен не только управлять но и вдохновлять не только решать 
+              проблемы настоящего но и создавать основы для будущих поколений. Культура и 
               образование — это фундамент любого прогресса."
             </blockquote>
-            <cite className="text-white font-bold font-cormorant text-3xl drop-shadow-md">— Рамазан Абдулатипов</cite>
+            <cite className="text-slate-600 font-semibold font-cormorant text-base">— Рамазан Абдулатипов</cite>
           </div>
 
           {/* Timeline */}
