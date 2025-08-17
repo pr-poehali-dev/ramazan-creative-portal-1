@@ -208,6 +208,17 @@ const Index = () => {
       {/* Biography Section */}
       <section id="biography" className="py-20 bg-white">
         <div className="container mx-auto px-6">
+          {/* Inspirational Quote */}
+          <div className="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-10 text-center shadow-lg border-l-8 border-blue-600 mb-16 max-w-4xl mx-auto">
+            <Icon name="Quote" size={48} className="text-blue-600 mx-auto mb-6" />
+            <blockquote className="text-2xl font-medium text-gray-800 mb-6 font-openSans leading-relaxed">
+              "Настоящий лидер должен не только управлять но и вдохновлять не только решать 
+              проблемы настоящего но и создавать основы для будущих поколений. Культура и 
+              образование — это фундамент любого прогресса."
+            </blockquote>
+            <cite className="text-blue-700 font-bold font-cormorant text-xl">— Рамазан Абдулатипов</cite>
+          </div>
+
           <h2 className="text-4xl font-bold text-center mb-4 font-cormorant text-darkGray">
             Биография
           </h2>
@@ -243,16 +254,7 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Personal Philosophy */}
-          <div className="bg-slate-100 rounded-lg p-8 text-center shadow-md border border-slate-200 mb-16 max-w-3xl mx-auto">
-            <Icon name="Quote" size={32} className="text-slate-600 mx-auto mb-4" />
-            <blockquote className="text-lg text-slate-700 mb-4 font-openSans leading-relaxed italic">
-              "Настоящий лидер должен не только управлять но и вдохновлять не только решать 
-              проблемы настоящего но и создавать основы для будущих поколений. Культура и 
-              образование — это фундамент любого прогресса."
-            </blockquote>
-            <cite className="text-slate-600 font-semibold font-cormorant text-base">— Рамазан Абдулатипов</cite>
-          </div>
+
 
           {/* Timeline */}
           <div className="mb-20">
