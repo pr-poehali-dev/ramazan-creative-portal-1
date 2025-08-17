@@ -197,8 +197,17 @@ const Index = () => {
               <img 
                 src="https://cdn.poehali.dev/files/c7f2ea43-a593-4eea-b990-d54d215c95c0.jpeg" 
                 alt="Рамазан Гаджимурадович Абдулатипов"
-                className="rounded-lg shadow-2xl w-full max-w-md mx-auto"
+                className="rounded-lg shadow-2xl w-full max-w-md mx-auto mb-6"
               />
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 max-w-md mx-auto">
+                <Icon name="Quote" size={32} className="text-gold mb-4" />
+                <blockquote className="text-white font-openSans italic leading-relaxed mb-4">
+                  "Настоящий лидер должен не только управлять, но и вдохновлять, не только решать 
+                  проблемы настоящего, но и создавать основы для будущих поколений. Культура и 
+                  образование — это фундамент любого прогресса."
+                </blockquote>
+                <cite className="text-gold font-semibold font-cormorant">— Рамазан Абдулатипов</cite>
+              </div>
             </div>
           </div>
         </div>
