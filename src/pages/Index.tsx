@@ -199,14 +199,14 @@ const Index = () => {
                 alt="Рамазан Гаджимурадович Абдулатипов"
                 className="rounded-lg shadow-2xl w-full max-w-md mx-auto mb-6"
               />
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 max-w-md mx-auto">
-                <Icon name="Quote" size={32} className="text-gold mb-4" />
-                <blockquote className="text-white font-openSans italic leading-relaxed mb-4">
+              <div className="bg-white/20 backdrop-blur-sm rounded-lg p-8 max-w-lg mx-auto border border-white/20">
+                <Icon name="Quote" size={48} className="text-gold mb-6" />
+                <blockquote className="text-white font-openSans italic text-lg leading-relaxed mb-6 font-medium">
                   "Настоящий лидер должен не только управлять, но и вдохновлять, не только решать 
                   проблемы настоящего, но и создавать основы для будущих поколений. Культура и 
                   образование — это фундамент любого прогресса."
                 </blockquote>
-                <cite className="text-gold font-semibold font-cormorant">— Рамазан Абдулатипов</cite>
+                <cite className="text-gold font-bold font-cormorant text-xl">— Рамазан Абдулатипов</cite>
               </div>
             </div>
           </div>
