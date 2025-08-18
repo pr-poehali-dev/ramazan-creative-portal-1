@@ -69,70 +69,140 @@ const Index = () => {
       title: "Воды Каспия",
       description: "Абстрактная композиция, вдохновленная морскими пейзажами родного края. Размер: 60x80 см, материал: акрил",
       image: "https://cdn.poehali.dev/files/6bd61afb-63ed-44fe-8fdd-c4dd99f0dad9.jpeg",
-      year: "2019"
+      year: "2019",
+      interiorImages: [
+        {
+          title: "В элегантном интерьере с голубыми акцентами",
+          description: "Картина гармонично дополняет изысканный интерьер с золотыми и голубыми тонами",
+          image: "https://cdn.poehali.dev/files/bc507b4e-cc14-4e89-a67d-86d1729496d0.jpg"
+        }
+      ]
     },
     {
       id: 2,
       title: "Горная пастораль",
       description: "Традиционная жизнь горцев в ярких красках народного творчества. Размер: 50x70 см, материал: акрил",
       image: "https://cdn.poehali.dev/files/f3525173-4711-4f1f-b069-a502ef0ab489.jpeg",
-      year: "2020"
+      year: "2020",
+      interiorImages: [
+        {
+          title: "В уютном домашнем кабинете",
+          description: "Картина прекрасно смотрится в теплом деревянном интерьере с морскими мотивами",
+          image: "https://cdn.poehali.dev/files/95a0ec10-c1c2-4df4-a0ef-d9cb0439a020.jpg"
+        }
+      ]
     },
     {
       id: 3,
       title: "Кавказские вершины",
       description: "Величественные горы Дагестана в экспрессивной живописной манере. Размер: 70x90 см, материал: акрил",
       image: "https://cdn.poehali.dev/files/06503cca-7832-4acd-b5c6-66b3f4c8a68e.jpeg",
-      year: "2021"
+      year: "2021",
+      interiorImages: [
+        {
+          title: "В стильной современной гостиной",
+          description: "Картина становится ярким акцентом в современном интерьере с бирюзовыми креслами",
+          image: "https://cdn.poehali.dev/files/285a6d67-612a-4d03-9813-0ce8d7ee4355.jpg"
+        }
+      ]
     },
     {
       id: 4,
       title: "Осенний свет",
       description: "Экспрессивная композиция с яркими желтыми и красными акцентами, символизирующая энергию осени. Размер: 40x60 см, материал: акрил",
       image: "https://cdn.poehali.dev/files/abe30654-ce65-42ea-a9cd-eaf83af35505.jpg",
-      year: "2022"
+      year: "2022",
+      interiorImages: [
+        {
+          title: "В современном интерьере с яркими акцентами",
+          description: "Картина отлично дополняет современный дизайн с желтыми элементами",
+          image: "https://cdn.poehali.dev/files/f85adeb5-cf85-4119-abd5-86bd1bc857c4.jpg"
+        }
+      ]
     },
     {
       id: 5,
       title: "Сердце земли",
       description: "Глубокая абстракция с красным центром, окруженным природными формами и цветами. Размер: 80x100 см, материал: акрил",
       image: "https://cdn.poehali.dev/files/631cc71a-5e19-48c2-874f-a1f7bf19fcdb.jpeg",
-      year: "2022"
+      year: "2022",
+      interiorImages: [
+        {
+          title: "В теплом загородном интерьере",
+          description: "Картина создает яркий цветовой акцент в интерьере с оранжевыми и бирюзовыми тонами",
+          image: "https://cdn.poehali.dev/files/ea0d7165-6e4a-4275-bcf7-7e400a376cad.jpg"
+        }
+      ]
     },
     {
       id: 6,
       title: "Космические ветра",
       description: "Динамичная композиция в бирюзовых и оранжевых тонах, напоминающая вихри в космосе. Размер: 50x80 см, материал: акрил",
       image: "https://cdn.poehali.dev/files/b7ffc4d2-2ccf-4ace-9605-4e129f731262.jpeg",
-      year: "2023"
+      year: "2023",
+      interiorImages: [
+        {
+          title: "В элегантной гостиной с золотыми акцентами",
+          description: "Картина отлично сочетается с синими и золотыми элементами дизайна",
+          image: "https://cdn.poehali.dev/files/bc507b4e-cc14-4e89-a67d-86d1729496d0.jpg"
+        }
+      ]
     },
     {
       id: 7,
       title: "Розовый сад",
       description: "Яркий букет роз на солнечном фоне, выполненный в импрессионистической манере. Размер: 30x40 см, материал: акрил",
       image: "https://cdn.poehali.dev/files/bf7d7a43-2335-40bd-9918-24f5e2e30abf.jpeg",
-      year: "2023"
+      year: "2023",
+      interiorImages: [
+        {
+          title: "В уютном домашнем интерьере",
+          description: "Картина придает тепло и уют деревянному интерьеру в натуральных тонах",
+          image: "https://cdn.poehali.dev/files/95a0ec10-c1c2-4df4-a0ef-d9cb0439a020.jpg"
+        }
+      ]
     },
     {
       id: 8,
       title: "Вихрь страсти",
       description: "Экспрессивная абстракция с огненными красками, отражающая внутреннюю энергию творчества. Размер: 60x90 см, материал: акрил",
       image: "https://cdn.poehali.dev/files/f9bab1ef-a7b2-4e5f-a851-3e3060f684e4.jpeg",
-      year: "2024"
+      year: "2024",
+      interiorImages: [
+        {
+          title: "В современном лофте с яркими креслами",
+          description: "Картина становится центральным элементом в панорамной гостиной",
+          image: "https://cdn.poehali.dev/files/285a6d67-612a-4d03-9813-0ce8d7ee4355.jpg"
+        }
+      ]
     },
     {
       id: 9,
       title: "Осенний лес",
       description: "Яркая экспрессивная работа с красно-оранжевыми кронами деревьев на изумрудном фоне. Размер: 40x50 см, материал: акрил",
       image: "https://cdn.poehali.dev/files/029268b8-89ed-4027-b95a-7c2b65a4fe42.jpg",
-      year: "2024"
+      year: "2024",
+      interiorImages: [
+        {
+          title: "В комфортабельном загородном доме",
+          description: "Картина отлично вписывается в интерьер с бирюзовыми и оранжевыми акцентами",
+          image: "https://cdn.poehali.dev/files/ea0d7165-6e4a-4275-bcf7-7e400a376cad.jpg"
+        }
+      ]
     },
     {
       id: 10,
       title: "Радужный поток",
       description: "Динамичная абстракция с яркими полосами цвета, символизирующая движение жизни. Размер: 70x120 см, материал: акрил",
       image: "https://cdn.poehali.dev/files/b98c33bc-4306-48bf-92e4-16b15157282b.jpeg",
-      year: "2024"
+      year: "2024",
+      interiorImages: [
+        {
+          title: "В ярком современном интерьере",
+          description: "Картина с яркими полосами прекрасно сочетается с желтыми акцентами",
+          image: "https://cdn.poehali.dev/files/f85adeb5-cf85-4119-abd5-86bd1bc857c4.jpg"
+        }
+      ]
     },
     {
       id: 11,
