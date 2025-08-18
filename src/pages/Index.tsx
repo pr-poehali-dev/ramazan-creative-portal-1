@@ -10,6 +10,7 @@ const Index = () => {
   const [currentAlbum, setCurrentAlbum] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [expandedTimelineItem, setExpandedTimelineItem] = useState<number | null>(null);
+  const [interiorModal, setInteriorModal] = useState<{ src: string; title: string } | null>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   const albums = [
@@ -760,6 +761,27 @@ const Index = () => {
                         <h4 className="font-semibold mb-2 font-cormorant">Техника:</h4>
                         <p className="text-gray-600 font-openSans">Масло на холсте</p>
                       </div>
+                      {painting.interiorImages && painting.interiorImages.length > 0 && (
+                        <div className="border-t pt-4">
+                          <h4 className="font-semibold mb-3 font-cormorant">Дизайн интерьера:</h4>
+                          <div className="space-y-2">
+                            {painting.interiorImages.map((interior, index) => (
+                              <Button
+                                key={index}
+                                variant="outline"
+                                className="w-full justify-start text-left p-3 h-auto border-gold hover:bg-gold hover:text-white"
+                                onClick={() => setInteriorModal({ 
+                                  src: interior.image, 
+                                  title: interior.title 
+                                })}
+                              >
+                                <Icon name="Eye" size={16} className="mr-2 flex-shrink-0" />
+                                <span className="font-openSans">{interior.title}</span>
+                              </Button>
+                            ))}
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </DialogContent>
@@ -1375,6 +1397,35 @@ const Index = () => {
           </p>
         </div>
       </footer>
+
+      {/* Interior Modal */}
+      {interiorModal && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
+          onClick={() => setInteriorModal(null)}
+        >
+          <div className="max-w-6xl max-h-full overflow-auto bg-white rounded-lg p-0" onClick={(e) => e.stopPropagation()}>
+            <div className="relative">
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                onClick={() => setInteriorModal(null)}
+                className="absolute top-4 right-4 z-10 text-white bg-black bg-opacity-50 hover:bg-opacity-70 rounded-full"
+              >
+                <Icon name="X" size={24} />
+              </Button>
+              <img 
+                src={interiorModal.src}
+                alt={interiorModal.title}
+                className="w-full h-auto rounded-lg"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6 rounded-b-lg">
+                <h3 className="text-2xl font-bold font-cormorant text-white mb-2">{interiorModal.title}</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
