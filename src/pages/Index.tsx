@@ -318,7 +318,7 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="lg:w-1/2">
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 font-cormorant">
+              <h1 className="text-5xl lg:text-6xl font-bold mb-6 font-cormorant -mt-4">
                 Рамазан Гаджимурадович
                 <span className="block text-gold">Абдулатипов</span>
               </h1>
@@ -339,31 +339,22 @@ const Index = () => {
               </div>
             </div>
             <div className="lg:w-1/2">
-              <div className="relative">
+              <div className="relative flex flex-col items-center">
                 <img 
                   src="https://cdn.poehali.dev/files/c7f2ea43-a593-4eea-b990-d54d215c95c0.jpeg" 
                   alt="Рамазан Гаджимурадович Абдулатипов"
-                className="rounded-lg shadow-2xl w-full max-w-md mx-auto mb-6"
-              />
-              
-              {/* Brand Logo */}
-              <div className="flex justify-center mb-6">
-                <img 
-                  src="https://cdn.poehali.dev/files/5858ccee-8393-4f91-af21-1c6b4f51a0f8.jpg" 
-                  alt="Логотип Рамазана Абдулатипова" 
-                  className="h-24 w-auto opacity-90 hover:opacity-100 transition-opacity duration-300"
+                  className="rounded-lg shadow-2xl w-full max-w-md mx-auto mb-8"
                 />
-              </div>
               
-              {/* Quote under photo */}
-              <div className="bg-white/20 backdrop-blur-md rounded-xl p-8 text-center border-2 border-gold/30 shadow-2xl">
-                <blockquote className="text-lg text-white mb-6 font-openSans leading-relaxed font-bold drop-shadow-lg">
-                  "Настоящий лидер должен не только управлять но и вдохновлять не только решать 
-                  проблемы настоящего но и создавать основы для будущих поколений. Культура и 
-                  образование — это фундамент любого прогресса."
-                </blockquote>
-                <cite className="text-gold font-black font-cormorant text-2xl drop-shadow-lg font-extrabold">— Рамазан Абдулатипов</cite>
-              </div>
+                {/* Quote under photo */}
+                <div className="bg-white/20 backdrop-blur-md rounded-xl p-8 text-center border-2 border-gold/30 shadow-2xl">
+                  <blockquote className="text-lg text-white mb-6 font-openSans leading-relaxed font-bold drop-shadow-lg">
+                    "Настоящий лидер должен не только управлять но и вдохновлять не только решать 
+                    проблемы настоящего но и создавать основы для будущих поколений. Культура и 
+                    образование — это фундамент любого прогресса."
+                  </blockquote>
+                  <cite className="text-gold font-black font-cormorant text-2xl drop-shadow-lg font-extrabold">— Рамазан Абдулатипов</cite>
+                </div>
               </div>
             </div>
           </div>
@@ -1039,6 +1030,28 @@ const Index = () => {
                     {books.map((book) => (
                       <option key={book.id} value={book.id}>
                         {book.title}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div className="md:col-span-2">
+                  <label className="block text-sm font-semibold text-darkGray mb-2">Заинтересовавшая картина из галереи</label>
+                  <select className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent">
+                    <option>Выберите картину (необязательно)</option>
+                    {paintings.map((painting) => (
+                      <option key={painting.id} value={painting.id}>
+                        {painting.title} ({painting.year})
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div className="md:col-span-2">
+                  <label className="block text-sm font-semibold text-darkGray mb-2">Заинтересовавший музыкальный альбом</label>
+                  <select className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent">
+                    <option>Выберите альбом (необязательно)</option>
+                    {albums.map((album) => (
+                      <option key={album.id} value={album.id}>
+                        {album.title} - {album.description}
                       </option>
                     ))}
                   </select>
