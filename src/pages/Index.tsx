@@ -10,6 +10,7 @@ const Index = () => {
   const [currentAlbum, setCurrentAlbum] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [expandedTimelineItem, setExpandedTimelineItem] = useState<number | null>(null);
+  const [modalImage, setModalImage] = useState<{ src: string; title: string; description: string } | null>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   const albums = [
@@ -17,6 +18,7 @@ const Index = () => {
       id: 0,
       title: "Мелодии Цамаури",
       description: "Первый альбом с традиционными мелодиями",
+      cover: "https://cdn.poehali.dev/files/1d18f7d6-a179-4c41-82ab-cf9109abd86f.jpeg",
       tracks: [
         { title: "Дагестан-моя молитва", duration: "4:15" },
         { title: "Возвращение", duration: "3:42" },
@@ -35,6 +37,7 @@ const Index = () => {
       id: 1,
       title: "Душа Востока",
       description: "Второй альбом с восточными мотивами",
+      cover: "https://cdn.poehali.dev/files/16c59f74-1127-4a9e-9f21-00c65c55fcb1.jpeg",
       tracks: [
         { title: "Восточный караван", duration: "4:22" },
         { title: "Дагестан", duration: "3:58" },
@@ -136,14 +139,28 @@ const Index = () => {
       title: "Красный цветок",
       description: "Нежная работа с одиноким красным цветком на фоне голубого неба и золотого поля. Размер: 25x35 см, материал: акрил",
       image: "https://cdn.poehali.dev/files/95ceff4c-abd3-48f4-8b82-d7945d5e4ec6.jpeg",
-      year: "2024"
+      year: "2024",
+      interiorImages: [
+        {
+          title: "В интерьере современной гостиной",
+          description: "Картина прекрасно дополняет современный интерьер с зелеными оттенками",
+          image: "https://cdn.poehali.dev/files/b76408e9-a746-4de8-8049-492a55ba0d7e.jpg"
+        }
+      ]
     },
     {
       id: 12,
       title: "Горные вершины",
       description: "Мощная экспрессивная композиция с острыми пиками в ярких зелено-красных тонах. Размер: 90x120 см, материал: акрил",
       image: "https://cdn.poehali.dev/files/8f0d913a-b971-4c0d-b1dd-b02013104f81.jpeg",
-      year: "2024"
+      year: "2024",
+      interiorImages: [
+        {
+          title: "Дизайн интерьера с картиной",
+          description: "Картина создает яркий акцент в стильном интерьере с оранжевыми тонами",
+          image: "https://cdn.poehali.dev/files/c5c73862-eb67-40b0-8394-3e76862260d2.jpg"
+        }
+      ]
     }
   ];
 
@@ -728,22 +745,47 @@ const Index = () => {
                     </CardContent>
                   </Card>
                 </DialogTrigger>
-                <DialogContent className="max-w-4xl">
+                <DialogContent className="max-w-6xl">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <img 
                         src={painting.image} 
                         alt={painting.title}
-                        className="w-full rounded-lg"
+                        className="w-full rounded-lg mb-4"
                       />
+                      {painting.interiorImages && (
+                        <div className="space-y-4">
+                          <h4 className="text-xl font-semibold font-cormorant text-darkGray">В интерьере</h4>
+                          {painting.interiorImages.map((interiorImg, index) => (
+                            <div key={index} className="space-y-2">
+                              <img 
+                                src={interiorImg.image}
+                                alt={interiorImg.title}
+                                className="w-full rounded-lg cursor-pointer hover:shadow-lg transition-shadow"
+                                onClick={() => setModalImage({
+                                  src: interiorImg.image,
+                                  title: interiorImg.title,
+                                  description: interiorImg.description
+                                })}
+                              />
+                              <h5 className="font-semibold font-cormorant text-sm">{interiorImg.title}</h5>
+                              <p className="text-gray-600 font-openSans text-sm">{interiorImg.description}</p>
+                            </div>
+                          ))}
+                        </div>
+                      )}
                     </div>
                     <div className="space-y-4">
                       <h3 className="text-3xl font-bold font-cormorant text-darkGray">{painting.title}</h3>
                       <p className="text-gray-600 font-openSans leading-relaxed">{painting.description}</p>
                       <div className="border-t pt-4">
                         <h4 className="font-semibold mb-2 font-cormorant">Техника:</h4>
-                        <p className="text-gray-600 font-openSans">Масло на холсте</p>
+                        <p className="text-gray-600 font-openSans">Акрил на холсте</p>
                       </div>
+                      <Button className="bg-gold hover:bg-yellow-600 text-white w-full mt-6">
+                        <Icon name="ShoppingCart" size={16} className="mr-2" />
+                        Заказать картину
+                      </Button>
                     </div>
                   </div>
                 </DialogContent>
@@ -791,14 +833,22 @@ const Index = () => {
             <div className="max-w-2xl mx-auto">
             {/* Current Track Display */}
             <Card className="mb-8 bg-gradient-to-r from-darkGray to-gray-800 text-white">
-              <CardContent className="p-8 text-center">
-                <Icon name="Music" size={48} className="text-gold mx-auto mb-4" />
-                <h3 className="text-2xl font-bold mb-2 font-cormorant">{currentTrackData.title}</h3>
-                <p className="text-gray-300 mb-2 font-openSans">Альбом: {currentAlbumData.title}</p>
-                <p className="text-gray-400 mb-6 font-openSans text-sm">{currentAlbumData.description}</p>
-                
-                {/* Player Controls */}
-                <div className="flex items-center justify-center gap-4 mb-6">
+              <CardContent className="p-8">
+                <div className="flex flex-col md:flex-row items-center gap-6">
+                  <div className="flex-shrink-0">
+                    <img 
+                      src={currentAlbumData.cover} 
+                      alt={`Обложка альбома ${currentAlbumData.title}`}
+                      className="w-48 h-48 rounded-lg shadow-xl object-cover"
+                    />
+                  </div>
+                  <div className="text-center md:text-left flex-1">
+                    <h3 className="text-3xl font-bold mb-2 font-cormorant">{currentTrackData.title}</h3>
+                    <p className="text-gold mb-2 font-openSans text-lg font-semibold">Альбом: {currentAlbumData.title}</p>
+                    <p className="text-gray-300 mb-6 font-openSans">{currentAlbumData.description}</p>
+                    
+                    {/* Player Controls */}
+                    <div className="flex items-center justify-center md:justify-start gap-4 mb-6">
                   <Button 
                     variant="ghost" 
                     size="icon" 
@@ -824,16 +874,18 @@ const Index = () => {
                   >
                     <Icon name="SkipForward" size={24} />
                   </Button>
-                </div>
-                
-                {/* Progress Bar */}
-                <div className="w-full bg-gray-600 rounded-full h-2 mb-4">
-                  <div className="bg-gold h-2 rounded-full w-1/3 transition-all duration-300"></div>
-                </div>
-                
-                <div className="flex justify-between text-sm text-gray-300">
-                  <span>1:15</span>
-                  <span>{currentTrackData.duration}</span>
+                    </div>
+                    
+                    {/* Progress Bar */}
+                    <div className="w-full bg-gray-600 rounded-full h-2 mb-4">
+                      <div className="bg-gold h-2 rounded-full w-1/3 transition-all duration-300"></div>
+                    </div>
+                    
+                    <div className="flex justify-between text-sm text-gray-300">
+                      <span>1:15</span>
+                      <span>{currentTrackData.duration}</span>
+                    </div>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -1349,6 +1401,34 @@ const Index = () => {
           </p>
         </div>
       </footer>
+
+      {/* Modal for fullsize interior images */}
+      {modalImage && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center p-4"
+          onClick={() => setModalImage(null)}
+        >
+          <div className="max-w-5xl max-h-full overflow-auto bg-white rounded-lg p-6" onClick={(e) => e.stopPropagation()}>
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-2xl font-bold font-cormorant">{modalImage.title}</h3>
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                onClick={() => setModalImage(null)}
+                className="text-gray-500 hover:text-gray-700"
+              >
+                <Icon name="X" size={24} />
+              </Button>
+            </div>
+            <img 
+              src={modalImage.src}
+              alt={modalImage.title}
+              className="w-full h-auto rounded-lg mb-4"
+            />
+            <p className="text-gray-600 font-openSans">{modalImage.description}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
