@@ -10,7 +10,6 @@ const Index = () => {
   const [currentAlbum, setCurrentAlbum] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [expandedTimelineItem, setExpandedTimelineItem] = useState<number | null>(null);
-  const [modalImage, setModalImage] = useState<{ src: string; title: string; description: string } | null>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   const albums = [
@@ -69,140 +68,70 @@ const Index = () => {
       title: "Воды Каспия",
       description: "Абстрактная композиция, вдохновленная морскими пейзажами родного края. Размер: 60x80 см, материал: акрил",
       image: "https://cdn.poehali.dev/files/6bd61afb-63ed-44fe-8fdd-c4dd99f0dad9.jpeg",
-      year: "2019",
-      interiorImages: [
-        {
-          title: "В элегантном интерьере с голубыми акцентами",
-          description: "Картина гармонично дополняет изысканный интерьер с золотыми и голубыми тонами",
-          image: "https://cdn.poehali.dev/files/bc507b4e-cc14-4e89-a67d-86d1729496d0.jpg"
-        }
-      ]
+      year: "2019"
     },
     {
       id: 2,
       title: "Горная пастораль",
       description: "Традиционная жизнь горцев в ярких красках народного творчества. Размер: 50x70 см, материал: акрил",
       image: "https://cdn.poehali.dev/files/f3525173-4711-4f1f-b069-a502ef0ab489.jpeg",
-      year: "2020",
-      interiorImages: [
-        {
-          title: "В уютном домашнем кабинете",
-          description: "Картина прекрасно смотрится в теплом деревянном интерьере с морскими мотивами",
-          image: "https://cdn.poehali.dev/files/95a0ec10-c1c2-4df4-a0ef-d9cb0439a020.jpg"
-        }
-      ]
+      year: "2020"
     },
     {
       id: 3,
       title: "Кавказские вершины",
       description: "Величественные горы Дагестана в экспрессивной живописной манере. Размер: 70x90 см, материал: акрил",
       image: "https://cdn.poehali.dev/files/06503cca-7832-4acd-b5c6-66b3f4c8a68e.jpeg",
-      year: "2021",
-      interiorImages: [
-        {
-          title: "В стильной современной гостиной",
-          description: "Картина становится ярким акцентом в современном интерьере с бирюзовыми креслами",
-          image: "https://cdn.poehali.dev/files/285a6d67-612a-4d03-9813-0ce8d7ee4355.jpg"
-        }
-      ]
+      year: "2021"
     },
     {
       id: 4,
       title: "Осенний свет",
       description: "Экспрессивная композиция с яркими желтыми и красными акцентами, символизирующая энергию осени. Размер: 40x60 см, материал: акрил",
       image: "https://cdn.poehali.dev/files/abe30654-ce65-42ea-a9cd-eaf83af35505.jpg",
-      year: "2022",
-      interiorImages: [
-        {
-          title: "В современном интерьере с яркими акцентами",
-          description: "Картина отлично дополняет современный дизайн с желтыми элементами",
-          image: "https://cdn.poehali.dev/files/f85adeb5-cf85-4119-abd5-86bd1bc857c4.jpg"
-        }
-      ]
+      year: "2022"
     },
     {
       id: 5,
       title: "Сердце земли",
       description: "Глубокая абстракция с красным центром, окруженным природными формами и цветами. Размер: 80x100 см, материал: акрил",
       image: "https://cdn.poehali.dev/files/631cc71a-5e19-48c2-874f-a1f7bf19fcdb.jpeg",
-      year: "2022",
-      interiorImages: [
-        {
-          title: "В теплом загородном интерьере",
-          description: "Картина создает яркий цветовой акцент в интерьере с оранжевыми и бирюзовыми тонами",
-          image: "https://cdn.poehali.dev/files/ea0d7165-6e4a-4275-bcf7-7e400a376cad.jpg"
-        }
-      ]
+      year: "2022"
     },
     {
       id: 6,
       title: "Космические ветра",
       description: "Динамичная композиция в бирюзовых и оранжевых тонах, напоминающая вихри в космосе. Размер: 50x80 см, материал: акрил",
       image: "https://cdn.poehali.dev/files/b7ffc4d2-2ccf-4ace-9605-4e129f731262.jpeg",
-      year: "2023",
-      interiorImages: [
-        {
-          title: "В элегантной гостиной с золотыми акцентами",
-          description: "Картина отлично сочетается с синими и золотыми элементами дизайна",
-          image: "https://cdn.poehali.dev/files/bc507b4e-cc14-4e89-a67d-86d1729496d0.jpg"
-        }
-      ]
+      year: "2023"
     },
     {
       id: 7,
       title: "Розовый сад",
       description: "Яркий букет роз на солнечном фоне, выполненный в импрессионистической манере. Размер: 30x40 см, материал: акрил",
       image: "https://cdn.poehali.dev/files/bf7d7a43-2335-40bd-9918-24f5e2e30abf.jpeg",
-      year: "2023",
-      interiorImages: [
-        {
-          title: "В уютном домашнем интерьере",
-          description: "Картина придает тепло и уют деревянному интерьеру в натуральных тонах",
-          image: "https://cdn.poehali.dev/files/95a0ec10-c1c2-4df4-a0ef-d9cb0439a020.jpg"
-        }
-      ]
+      year: "2023"
     },
     {
       id: 8,
       title: "Вихрь страсти",
       description: "Экспрессивная абстракция с огненными красками, отражающая внутреннюю энергию творчества. Размер: 60x90 см, материал: акрил",
       image: "https://cdn.poehali.dev/files/f9bab1ef-a7b2-4e5f-a851-3e3060f684e4.jpeg",
-      year: "2024",
-      interiorImages: [
-        {
-          title: "В современном лофте с яркими креслами",
-          description: "Картина становится центральным элементом в панорамной гостиной",
-          image: "https://cdn.poehali.dev/files/285a6d67-612a-4d03-9813-0ce8d7ee4355.jpg"
-        }
-      ]
+      year: "2024"
     },
     {
       id: 9,
       title: "Осенний лес",
       description: "Яркая экспрессивная работа с красно-оранжевыми кронами деревьев на изумрудном фоне. Размер: 40x50 см, материал: акрил",
       image: "https://cdn.poehali.dev/files/029268b8-89ed-4027-b95a-7c2b65a4fe42.jpg",
-      year: "2024",
-      interiorImages: [
-        {
-          title: "В комфортабельном загородном доме",
-          description: "Картина отлично вписывается в интерьер с бирюзовыми и оранжевыми акцентами",
-          image: "https://cdn.poehali.dev/files/ea0d7165-6e4a-4275-bcf7-7e400a376cad.jpg"
-        }
-      ]
+      year: "2024"
     },
     {
       id: 10,
       title: "Радужный поток",
       description: "Динамичная абстракция с яркими полосами цвета, символизирующая движение жизни. Размер: 70x120 см, материал: акрил",
       image: "https://cdn.poehali.dev/files/b98c33bc-4306-48bf-92e4-16b15157282b.jpeg",
-      year: "2024",
-      interiorImages: [
-        {
-          title: "В ярком современном интерьере",
-          description: "Картина с яркими полосами прекрасно сочетается с желтыми акцентами",
-          image: "https://cdn.poehali.dev/files/f85adeb5-cf85-4119-abd5-86bd1bc857c4.jpg"
-        }
-      ]
+      year: "2024"
     },
     {
       id: 11,
@@ -815,47 +744,22 @@ const Index = () => {
                     </CardContent>
                   </Card>
                 </DialogTrigger>
-                <DialogContent className="max-w-6xl">
+                <DialogContent className="max-w-4xl">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <img 
                         src={painting.image} 
                         alt={painting.title}
-                        className="w-full rounded-lg mb-4"
+                        className="w-full rounded-lg"
                       />
-                      {painting.interiorImages && (
-                        <div className="space-y-4">
-                          <h4 className="text-xl font-semibold font-cormorant text-darkGray">В интерьере</h4>
-                          {painting.interiorImages.map((interiorImg, index) => (
-                            <div key={index} className="space-y-2">
-                              <img 
-                                src={interiorImg.image}
-                                alt={interiorImg.title}
-                                className="w-full rounded-lg cursor-pointer hover:shadow-lg transition-shadow"
-                                onClick={() => setModalImage({
-                                  src: interiorImg.image,
-                                  title: interiorImg.title,
-                                  description: interiorImg.description
-                                })}
-                              />
-                              <h5 className="font-semibold font-cormorant text-sm">{interiorImg.title}</h5>
-                              <p className="text-gray-600 font-openSans text-sm">{interiorImg.description}</p>
-                            </div>
-                          ))}
-                        </div>
-                      )}
                     </div>
                     <div className="space-y-4">
                       <h3 className="text-3xl font-bold font-cormorant text-darkGray">{painting.title}</h3>
                       <p className="text-gray-600 font-openSans leading-relaxed">{painting.description}</p>
                       <div className="border-t pt-4">
                         <h4 className="font-semibold mb-2 font-cormorant">Техника:</h4>
-                        <p className="text-gray-600 font-openSans">Акрил на холсте</p>
+                        <p className="text-gray-600 font-openSans">Масло на холсте</p>
                       </div>
-                      <Button className="bg-gold hover:bg-yellow-600 text-white w-full mt-6">
-                        <Icon name="ShoppingCart" size={16} className="mr-2" />
-                        Заказать картину
-                      </Button>
                     </div>
                   </div>
                 </DialogContent>
@@ -1471,34 +1375,6 @@ const Index = () => {
           </p>
         </div>
       </footer>
-
-      {/* Modal for fullsize interior images */}
-      {modalImage && (
-        <div 
-          className="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center p-4"
-          onClick={() => setModalImage(null)}
-        >
-          <div className="max-w-5xl max-h-full overflow-auto bg-white rounded-lg p-6" onClick={(e) => e.stopPropagation()}>
-            <div className="flex justify-between items-center mb-4">
-              <h3 className="text-2xl font-bold font-cormorant">{modalImage.title}</h3>
-              <Button 
-                variant="ghost" 
-                size="icon" 
-                onClick={() => setModalImage(null)}
-                className="text-gray-500 hover:text-gray-700"
-              >
-                <Icon name="X" size={24} />
-              </Button>
-            </div>
-            <img 
-              src={modalImage.src}
-              alt={modalImage.title}
-              className="w-full h-auto rounded-lg mb-4"
-            />
-            <p className="text-gray-600 font-openSans">{modalImage.description}</p>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
