@@ -378,10 +378,7 @@ const Index = () => {
 Экс-глава Республики Дагестан, автор более 20 книг, 
 создатель уникальных живописных произведений и музыкальных композиций.</p>
               <div className="flex gap-4">
-                <Button className="bg-gold hover:bg-yellow-600 text-white px-8 py-3" onClick={() => document.getElementById('creative')?.scrollIntoView({ behavior: 'smooth' })}>
-                  <Icon name="BookOpen" size={20} className="mr-2" />
-                  Творчество
-                </Button>
+                <Button className="bg-gold hover:bg-yellow-600 text-white px-8 py-3" onClick={() => document.getElementById('creative')?.scrollIntoView({ behavior: 'smooth' })}>ТВОРЧЕСТВО </Button>
                 <Button variant="outline" className="border-white text-white hover:bg-white hover:text-darkGray px-8 py-3" onClick={() => document.getElementById('biography')?.scrollIntoView({ behavior: 'smooth' })}>
                   <Icon name="User" size={20} className="mr-2" />
                   Биография
