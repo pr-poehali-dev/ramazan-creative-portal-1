@@ -661,7 +661,7 @@ const Index = () => {
 
       {/* Creative Works Section */}
       <section id="creative" className="py-20 bg-orange-50">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 bg-yellow-600">
           <h2 className="text-4xl font-bold text-center mb-4 font-cormorant text-darkGray">
             Творческое наследие
           </h2>
