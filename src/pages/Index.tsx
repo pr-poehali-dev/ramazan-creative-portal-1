@@ -356,8 +356,8 @@ const Index = () => {
             <div className="hidden md:flex space-x-8">
               <a href="#biography" className="text-darkGray hover:text-gold transition-colors text-lg font-bold">Биография</a>
               <a href="#books-catalog" className="text-darkGray hover:text-gold transition-colors text-lg font-bold">Книги</a>
-              <a href="#paintings-gallery" className="text-darkGray hover:text-gold transition-colors text-lg font-bold">Картины</a>
-              <a href="#music-compositions" className="text-darkGray hover:text-gold transition-colors text-lg font-bold">Музыка</a>
+              <a href="#gallery" className="text-darkGray hover:text-gold transition-colors text-lg font-bold">Картины</a>
+              <a href="#music-player" className="text-darkGray hover:text-gold transition-colors text-lg font-bold">Музыка</a>
               <a href="#dagestan" className="text-darkGray hover:text-gold transition-colors text-lg font-bold">Дагестан</a>
               <a href="#contacts" className="text-darkGray hover:text-gold transition-colors text-lg font-bold">Контакты</a>
             </div>
