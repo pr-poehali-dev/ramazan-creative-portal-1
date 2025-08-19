@@ -372,7 +372,7 @@ const Index = () => {
             <div className="lg:w-1/2">
               <h1 className="text-5xl lg:text-6xl font-bold mb-6 font-cormorant -mt-4">
                 Рамазан Гаджимурадович
-                <span className="block text-gold px-0 my-0 mx-[125px] text-7xl">Абдулатипов</span>
+                <span className="block text-gold px-0 my-0 text-7xl mx-[115px]">Абдулатипов</span>
               </h1>
               <p className="text-xl mb-8 text-gray-300 font-openSans leading-relaxed">
                 Выдающийся государственный деятель, писатель, художник и композитор. 
