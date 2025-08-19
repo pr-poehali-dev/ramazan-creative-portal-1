@@ -531,7 +531,7 @@ const Index = () => {
 
       {/* Dagestan Legacy Section */}
       <section id="dagestan" className="pt-8 pb-20 bg-white">
-        <div className="container mx-auto px-6 bg-[#b8860b1a]">
+        <div className="container mx-auto px-6 bg-[#fbfbfb1a]">
           <div className="max-w-4xl mx-auto text-center bg-[#b8860b1a]">
             <h2 className="text-4xl font-bold mb-6 font-cormorant text-darkGray">
               Деятельность в Дагестане
