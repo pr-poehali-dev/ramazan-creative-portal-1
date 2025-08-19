@@ -414,7 +414,7 @@ const Index = () => {
       </section>
 
       {/* Brand Section */}
-      <section className="py-16 bg-gradient-to-br from-amber-50 to-yellow-50">
+      <section className="py-16 from-amber-50 to-yellow-50 bg-[#ffffff]">
         <div className="container mx-auto px-6">
           <div className="text-center">
             <div className="flex justify-center mb-8">
