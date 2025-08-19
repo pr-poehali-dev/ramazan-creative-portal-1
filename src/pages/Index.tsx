@@ -354,12 +354,12 @@ const Index = () => {
               />
             </div>
             <div className="hidden md:flex space-x-8">
-              <a href="#biography" className="text-darkGray hover:text-gold transition-colors">Биография</a>
-              <a href="#books-catalog" className="text-darkGray hover:text-gold transition-colors">Книги</a>
-              <a href="#paintings" className="text-darkGray hover:text-gold transition-colors">Картины</a>
-              <a href="#music" className="text-darkGray hover:text-gold transition-colors">Музыка</a>
-              <a href="#dagestan" className="text-darkGray hover:text-gold transition-colors">Дагестан</a>
-              <a href="#contacts" className="text-darkGray hover:text-gold transition-colors">Контакты</a>
+              <a href="#biography" className="text-darkGray hover:text-gold transition-colors text-lg font-bold">Биография</a>
+              <a href="#books-catalog" className="text-darkGray hover:text-gold transition-colors text-lg font-bold">Книги</a>
+              <a href="#paintings-gallery" className="text-darkGray hover:text-gold transition-colors text-lg font-bold">Картины</a>
+              <a href="#music-compositions" className="text-darkGray hover:text-gold transition-colors text-lg font-bold">Музыка</a>
+              <a href="#dagestan" className="text-darkGray hover:text-gold transition-colors text-lg font-bold">Дагестан</a>
+              <a href="#contacts" className="text-darkGray hover:text-gold transition-colors text-lg font-bold">Контакты</a>
             </div>
           </nav>
         </div>
