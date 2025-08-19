@@ -370,7 +370,7 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="lg:w-1/2">
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 font-cormorant -mt-4 text-center">
+              <h1 className="text-5xl lg:text-6xl font-bold mb-6 font-cormorant -mt-4 text-left">
                 Рамазан Гаджимурадович
                 <span className="block text-gold px-0 my-0 text-7xl mx-0">Абдулатипов</span>
               </h1>
