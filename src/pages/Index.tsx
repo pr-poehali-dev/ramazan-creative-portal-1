@@ -398,11 +398,7 @@ const Index = () => {
               
                 {/* Quote under photo */}
                 <div className="bg-white/20 backdrop-blur-md rounded-xl p-8 text-center border-2 border-gold/30 shadow-2xl">
-                  <blockquote className="text-lg text-white mb-6 font-openSans leading-relaxed font-bold drop-shadow-lg">
-                    "Настоящий лидер должен не только управлять но и вдохновлять не только решать 
-                    проблемы настоящего но и создавать основы для будущих поколений. Культура и 
-                    образование — это фундамент любого прогресса."
-                  </blockquote>
+                  <blockquote className="text-lg text-white font-openSans leading-relaxed font-bold drop-shadow-lg mx-0 px-0 my-0 rounded-none">"Настоящий лидер должен не только управлять, но и вдохновлять, не только решать проблемы настоящего, но и создавать основы для будущих поколений. Культура и образование — это фундамент любого прогресса.</blockquote>
                   <cite className="text-gold font-black font-cormorant text-2xl drop-shadow-lg font-extrabold">— Рамазан Абдулатипов</cite>
                 </div>
               </div>
