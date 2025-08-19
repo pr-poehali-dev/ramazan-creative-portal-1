@@ -672,7 +672,7 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Books */}
             <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-              <CardContent className="p-8 text-center">
+              <CardContent className="p-8 text-center bg-[#b8860b1a]">
                 <div className="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                   <Icon name="BookOpen" size={32} className="text-white" />
                 </div>
