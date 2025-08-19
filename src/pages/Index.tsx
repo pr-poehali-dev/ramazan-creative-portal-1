@@ -720,7 +720,7 @@ const Index = () => {
 
             {/* Music */}
             <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-              <CardContent className="p-8 text-center bg-[#b8860b1a]">
+              <CardContent className="p-8 text-center bg-[#ffffff1a]">
                 <div className="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                   <Icon name="Music" size={32} className="text-white" />
                 </div>
