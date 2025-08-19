@@ -695,8 +695,8 @@ const Index = () => {
                   Живописные работы, отражающие красоту Кавказа и философские размышления
                 </p>
                 <img 
-                  src="https://cdn.poehali.dev/files/1776b388-f570-41d6-a23f-a04d68d21513.jpeg" 
-                  alt="Картины Рамазана Абдулатипова"
+                  src="https://cdn.poehali.dev/files/bd9158c6-1ba0-44e1-b8a0-dd77b6872566.jpg" 
+                  alt="Художник Рамазан Абдулатипов за работой"
                   className="rounded-lg mb-6 w-full h-48 object-cover"
                 />
                 <Badge variant="secondary" className="mb-2">Пейзажи</Badge>
