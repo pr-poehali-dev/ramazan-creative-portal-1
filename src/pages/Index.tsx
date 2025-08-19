@@ -1438,7 +1438,7 @@ const Index = () => {
       {/* Interior Modal */}
       {interiorModal && (
         <div 
-          className="fixed inset-0 bg-black bg-opacity-95 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#fffffff2]"
           onClick={() => setInteriorModal(null)}
         >
           <div className="max-w-7xl max-h-full overflow-auto" onClick={(e) => e.stopPropagation()}>
