@@ -357,7 +357,7 @@ const Index = () => {
               <a href="#biography" className="text-darkGray hover:text-gold transition-colors text-2xl font-bold">Биография</a>
               <a href="#books-catalog" className="text-darkGray hover:text-gold transition-colors font-bold text-2xl">Книги</a>
               <a href="#gallery" className="text-darkGray hover:text-gold transition-colors font-bold rounded-none text-2xl">Картины</a>
-              <a href="#music-player" className="text-darkGray hover:text-gold transition-colors text-lg font-bold">Музыка</a>
+              <a href="#music-player" className="text-darkGray hover:text-gold transition-colors font-bold rounded-none text-2xl">Музыка</a>
               <a href="#dagestan" className="text-darkGray hover:text-gold transition-colors text-lg font-bold">Дагестан</a>
               <a href="#contacts" className="text-darkGray hover:text-gold transition-colors text-lg font-bold">Контакты</a>
             </div>
