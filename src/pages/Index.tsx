@@ -533,9 +533,7 @@ const Index = () => {
       <section id="dagestan" className="pt-8 pb-20 bg-white">
         <div className="container mx-auto px-6 bg-[#fbfbfb1a]">
           <div className="max-w-4xl mx-auto text-center bg-[#b8860b1a]">
-            <h2 className="text-4xl font-bold mb-6 font-cormorant text-darkGray">
-              Деятельность в Дагестане
-            </h2>
+            <h2 className="text-4xl font-bold mb-6 font-cormorant text-darkGray">Деятельность в Даге</h2>
             <p className="text-xl text-gray-600 mb-4 font-openSans leading-relaxed">
               В 2013 году, когда Абдулатипов возглавил Дагестан, республика считалась 
               одним из самых сложных регионов России. Период руководства ознаменовался 
