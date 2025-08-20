@@ -988,9 +988,7 @@ const Index = () => {
       {/* Creative Works Section */}
       <section id="creative" className="py-20 bg-[#ffff]">
         <div className="container mx-auto px-6 bg-[#b8860b1a]">
-          <h2 className="text-4xl font-bold text-center mb-4 font-cormorant text-darkGray">
-            Творческое наследие
-          </h2>
+          <h2 className="text-4xl font-bold text-center mb-4 font-cormorant text-darkGray">Творческие грани Рамазана Абдулатипова</h2>
           <p className="text-center text-gray-600 mb-16 max-w-2xl mx-auto font-openSans">
             Многогранный талант, воплощенный в литературе, живописи и музыке
           </p>
