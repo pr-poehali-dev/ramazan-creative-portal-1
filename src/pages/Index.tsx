@@ -11,6 +11,7 @@ const Index = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [expandedTimelineItem, setExpandedTimelineItem] = useState<number | null>(null);
   const [interiorModal, setInteriorModal] = useState<{ src: string; title: string; description?: string } | null>(null);
+  const [selectedProject, setSelectedProject] = useState<any | null>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   const albums = [
@@ -327,6 +328,152 @@ const Index = () => {
     }
   ];
 
+  const legacyProjects = [
+    {
+      id: 1,
+      title: "Родовая башня и краеведческий музей",
+      location: "село Гебгута, Тляратинский район",
+      description: "Культурно-исторический комплекс, сохраняющий память о корнях и традициях горного народа. Музей внутри башни рассказывает историю рода и региона.",
+      year: "2013-2017",
+      category: "Культурное наследие",
+      image: "/img/1b48b0aa-52ff-4040-9757-bb99804237ae.jpg",
+      status: "Действующий",
+      impact: "Центр культурного притяжения для жителей и туристов",
+      currentCurator: "Администрация Тляратинского района",
+      videoDescription: "Интервью с директором музея о значении проекта для сохранения культурного наследия"
+    },
+    {
+      id: 2,
+      title: "Православный храм св. князя Владимира",
+      location: "Дом правительства, Махачкала",
+      description: "Храм в честь святого равноапостольного князя Владимира. Инициатива Рамазана Абдулатипова и его супруги Калининой Инны Васильевны.",
+      year: "2014-2016",
+      category: "Религиозные объекты",
+      image: "/img/b275b590-d85c-46e2-b9c2-a76b4ae812a4.jpg",
+      status: "Действующий",
+      impact: "Символ межконфессионального диалога и единства",
+      currentCurator: "Православная община Дагестана",
+      videoDescription: "Настоятель храма рассказывает о роли проекта в межрелигиозном диалоге"
+    },
+    {
+      id: 3,
+      title: "Мечеть имени имама шейха Шамиля",
+      location: "Махачкала",
+      description: "Мечеть имени имама Дагестана и Чечни шейха Шамиля, построенная по личной инициативе главы республики.",
+      year: "2015-2017",
+      category: "Религиозные объекты",
+      image: "/img/2db73cd0-038e-456d-a8ce-a1b12de24b6d.jpg",
+      status: "Действующий",
+      impact: "Духовный центр для мусульманской общины региона",
+      currentCurator: "Духовное управление мусульман Дагестана",
+      videoDescription: "Имам мечети о духовном значении объекта для верующих"
+    },
+    {
+      id: 4,
+      title: "Памятник Русской учительнице",
+      location: "село Гебгута",
+      description: "Памятник Русской учительнице 'Варваре Николаевне' и ослику как символу трудолюбия в родном селе президента.",
+      year: "2016",
+      category: "Памятники",
+      image: "/img/d10542f1-f113-4731-9f42-e5ffd7eacde0.jpg",
+      status: "Действующий",
+      impact: "Символ уважения к образованию и межнациональной дружбе",
+      currentCurator: "Администрация села Гебгута",
+      videoDescription: "Местные жители рассказывают о значении памятника для села"
+    },
+    {
+      id: 5,
+      title: "Дом Дружбы",
+      location: "Махачкала",
+      description: "Культурно-общественный центр для укрепления межнационального взаимодействия. Место проведения конференций, выставок и фестивалей.",
+      year: "2017",
+      category: "Культурные центры",
+      image: "/img/bfc0248a-d5c7-48ab-b74b-f24eff4e0a92.jpg",
+      status: "Действующий",
+      impact: "Центр межнационального диалога и культурного обмена",
+      currentCurator: "Комитет по межнациональным отношениям РД",
+      videoDescription: "Руководитель центра о роли Дома Дружбы в современном Дагестане"
+    },
+    {
+      id: 6,
+      title: "Театр поэзии 'От Пушкина до Гамзатова'",
+      location: "Махачкала",
+      description: "Первый в России дагестанский Театр Поэзии, воплотивший заветную мечту Расула Гамзатова.",
+      year: "2016",
+      category: "Культурные учреждения",
+      image: "/img/5ff9f585-b1b3-485b-8eb9-46e5144010d3.jpg",
+      status: "Действующий",
+      impact: "Уникальная площадка для развития поэтического искусства",
+      currentCurator: "Министерство культуры РД",
+      videoDescription: "Художественный руководитель театра о творческих достижениях и планах"
+    },
+    {
+      id: 7,
+      title: "Мемориал 'Ахульго'",
+      location: "Дагестан",
+      description: "Мемориал в память о событиях 1999 года, ставший символом национальной памяти и единства региона.",
+      year: "2016",
+      category: "Мемориалы",
+      image: "/img/b58d7a3c-c759-42cb-b980-267f8dc7b0d3.jpg",
+      status: "Действующий",
+      impact: "Место памяти и патриотического воспитания молодежи",
+      currentCurator: "Комитет по делам молодежи РД",
+      videoDescription: "Историк рассказывает о значении мемориала для сохранения исторической памяти"
+    },
+    {
+      id: 8,
+      title: "Национальный музей им. А.Тахо-Годи",
+      location: "Махачкала",
+      description: "Крупнейшее музейное объединение на Северном Кавказе с 39 филиалами по всему Дагестану.",
+      year: "2015",
+      category: "Музеи",
+      image: "/img/5c8f018f-f5e2-4e1e-8dbb-045766551dd5.jpg",
+      status: "Действующий",
+      impact: "Главный хранитель культурного наследия Дагестана",
+      currentCurator: "Директор Национального музея РД",
+      videoDescription: "Директор музея о развитии музейного дела и новых экспозициях"
+    },
+    {
+      id: 9,
+      title: "Аллея 'Город мастеров'",
+      location: "Махачкала",
+      description: "Этнокультурная туристическая площадка с изделиями народных промыслов: кубачинскими ювелирными изделиями, табасаранскими коврами, балхарской керамикой.",
+      year: "2017",
+      category: "Туристические объекты",
+      image: "/img/5e30f113-8e63-479b-8215-90b31fc3b402.jpg",
+      status: "Действующий",
+      impact: "Популяризация дагестанских народных промыслов",
+      currentCurator: "Комитет по туризму РД",
+      videoDescription: "Мастера народных промыслов рассказывают о развитии ремесленничества"
+    },
+    {
+      id: 10,
+      title: "Волейбольная площадка 'Волейбол в сердце гор'",
+      location: "село Гебгута",
+      description: "Спортивная площадка с потрясающим видом на горы, ставшая центром спортивной жизни села.",
+      year: "2016",
+      category: "Спортивные объекты",
+      image: "/img/b82a3507-f448-40b1-abbe-a7ba79e3be7a.jpg",
+      status: "Действующий",
+      impact: "Развитие спорта и здорового образа жизни в горных селах",
+      currentCurator: "Федерация волейбола РД",
+      videoDescription: "Тренер и местные спортсмены о влиянии площадки на развитие спорта"
+    },
+    {
+      id: 11,
+      title: "Набережная Дербента",
+      location: "Дербент",
+      description: "Городская набережная, построенная к 2000-летию древнего города Дербента.",
+      year: "2017",
+      category: "Городская инфраструктура",
+      image: "/img/1f3fdaf3-bac1-49c2-a2e8-c86cb7d7d7ff.jpg",
+      status: "Действующий",
+      impact: "Главная туристическая достопримечательность города",
+      currentCurator: "Администрация города Дербент",
+      videoDescription: "Мэр Дербента о роли набережной в развитии туризма и городской среды"
+    }
+  ];
+
   const togglePlay = () => {
     setIsPlaying(!isPlaying);
   };
@@ -359,6 +506,7 @@ const Index = () => {
               <a href="#gallery" className="text-darkGray hover:text-gold transition-colors font-bold rounded-none text-2xl">Картины</a>
               <a href="#music-player" className="text-darkGray hover:text-gold transition-colors font-bold rounded-none text-2xl">Музыка</a>
               <a href="#dagestan" className="text-darkGray hover:text-gold transition-colors font-bold rounded-none text-2xl">Дагестан</a>
+              <a href="#legacy-projects" className="text-darkGray hover:text-gold transition-colors font-bold rounded-none text-2xl">Проекты</a>
               <a href="#contacts" className="text-darkGray hover:text-gold transition-colors font-bold text-2xl px-0">Контакты</a>
             </div>
           </nav>
@@ -644,6 +792,194 @@ const Index = () => {
                   </p>
                 </CardContent>
               </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Legacy Projects Section */}
+      <section id="legacy-projects" className="py-20 bg-gradient-to-br from-gold/5 to-yellow-50">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-6 font-cormorant text-darkGray">
+              Наследие проектов
+            </h2>
+            <p className="text-xl text-gray-600 mb-8 max-w-4xl mx-auto font-openSans leading-relaxed">
+              Реализованные инициативы Рамазана Гаджимурадовича продолжают служить людям и 
+              развивать регион. Каждый проект — это живое свидетельство его вклада в будущее Дагестана.
+            </p>
+            <div className="bg-gradient-to-r from-gold to-yellow-600 text-white p-6 rounded-xl max-w-3xl mx-auto">
+              <Icon name="Video" size={32} className="mx-auto mb-4" />
+              <h3 className="text-xl font-bold mb-2">Видео-презентации от кураторов</h3>
+              <p className="text-yellow-100">
+                Нажмите на любой проект, чтобы увидеть интервью с текущими руководителями 
+                и узнать, как наследие Рамазана Абдулатипова влияет на развитие республики сегодня
+              </p>
+            </div>
+          </div>
+          
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
+            {legacyProjects.map((project) => (
+              <Dialog key={project.id}>
+                <DialogTrigger asChild>
+                  <Card className="group cursor-pointer hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden border-2 border-transparent hover:border-gold/30">
+                    <div className="relative">
+                      <img 
+                        src={project.image} 
+                        alt={project.title}
+                        className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute top-4 left-4">
+                        <Badge className="bg-gold text-white font-semibold">{project.category}</Badge>
+                      </div>
+                      <div className="absolute top-4 right-4">
+                        <div className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                          project.status === 'Действующий' 
+                            ? 'bg-green-500 text-white' 
+                            : 'bg-gray-500 text-white'
+                        }`}>
+                          {project.status}
+                        </div>
+                      </div>
+                      <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                        <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-gold text-white p-3 rounded-full">
+                          <Icon name="Play" size={24} />
+                        </div>
+                      </div>
+                    </div>
+                    <CardContent className="p-6">
+                      <h3 className="text-lg font-bold mb-2 font-cormorant text-darkGray group-hover:text-gold transition-colors">
+                        {project.title}
+                      </h3>
+                      <div className="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                        <Icon name="MapPin" size={14} />
+                        <span>{project.location}</span>
+                        <span>•</span>
+                        <span>{project.year}</span>
+                      </div>
+                      <p className="text-gray-600 font-openSans text-sm mb-4 leading-relaxed line-clamp-3">
+                        {project.description}
+                      </p>
+                      <div className="flex items-center justify-between">
+                        <Badge variant="outline" className="text-xs">{project.impact}</Badge>
+                        <Button size="sm" className="bg-gold hover:bg-yellow-600 text-white">
+                          <Icon name="Video" size={14} className="mr-1" />
+                          Видео
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </DialogTrigger>
+                <DialogContent className="max-w-6xl max-h-[90vh] overflow-auto">
+                  <div className="grid lg:grid-cols-2 gap-8">
+                    <div className="space-y-6">
+                      <img 
+                        src={project.image} 
+                        alt={project.title}
+                        className="w-full rounded-lg shadow-lg"
+                      />
+                      
+                      {/* Video Placeholder */}
+                      <div className="bg-gradient-to-br from-darkGray to-gray-800 rounded-lg aspect-video flex items-center justify-center relative group cursor-pointer hover:from-gold hover:to-yellow-600 transition-all duration-300">
+                        <div className="text-center text-white">
+                          <Icon name="Play" size={48} className="mx-auto mb-2 group-hover:scale-110 transition-transform" />
+                          <p className="text-lg font-semibold">Видео-презентация</p>
+                          <p className="text-sm opacity-80">от {project.currentCurator}</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-6">
+                      <div>
+                        <div className="flex items-center gap-3 mb-4">
+                          <Badge className="bg-gold text-white">{project.category}</Badge>
+                          <div className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                            project.status === 'Действующий' 
+                              ? 'bg-green-500 text-white' 
+                              : 'bg-gray-500 text-white'
+                          }`}>
+                            {project.status}
+                          </div>
+                        </div>
+                        <h3 className="text-3xl font-bold font-cormorant text-darkGray mb-4">
+                          {project.title}
+                        </h3>
+                        <div className="flex items-center gap-2 text-gray-500 mb-4">
+                          <Icon name="MapPin" size={16} />
+                          <span className="font-openSans">{project.location}</span>
+                          <span>•</span>
+                          <span className="font-openSans">{project.year}</span>
+                        </div>
+                      </div>
+                      
+                      <div className="space-y-4">
+                        <div>
+                          <h4 className="font-semibold text-darkGray mb-2 font-cormorant">Описание проекта:</h4>
+                          <p className="text-gray-600 font-openSans leading-relaxed">{project.description}</p>
+                        </div>
+                        
+                        <div>
+                          <h4 className="font-semibold text-darkGray mb-2 font-cormorant">Влияние на регион:</h4>
+                          <p className="text-gray-600 font-openSans leading-relaxed">{project.impact}</p>
+                        </div>
+                        
+                        <div>
+                          <h4 className="font-semibold text-darkGray mb-2 font-cormorant">Текущий куратор:</h4>
+                          <p className="text-gray-600 font-openSans">{project.currentCurator}</p>
+                        </div>
+                        
+                        <div className="bg-gold/10 p-4 rounded-lg">
+                          <h4 className="font-semibold text-darkGray mb-2 font-cormorant flex items-center gap-2">
+                            <Icon name="Video" size={16} />
+                            О видео-презентации:
+                          </h4>
+                          <p className="text-gray-600 font-openSans text-sm leading-relaxed">
+                            {project.videoDescription}
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div className="pt-4 border-t">
+                        <Button 
+                          className="w-full bg-gold hover:bg-yellow-600 text-white"
+                          onClick={() => setSelectedProject(project)}
+                        >
+                          <Icon name="Play" size={20} className="mr-2" />
+                          Смотреть видео-презентацию
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                </DialogContent>
+              </Dialog>
+            ))}
+          </div>
+          
+          <div className="text-center mt-16">
+            <div className="bg-white rounded-xl p-8 shadow-lg max-w-4xl mx-auto">
+              <Icon name="Heart" size={48} className="text-gold mx-auto mb-4" />
+              <h3 className="text-2xl font-bold mb-4 font-cormorant text-darkGray">
+                Живое наследие
+              </h3>
+              <p className="text-gray-600 font-openSans leading-relaxed mb-6">
+                Каждый из этих проектов продолжает активно функционировать и развиваться, 
+                принося пользу жителям Дагестана и сохраняя память о вкладе 
+                Рамазана Гаджимурадовича Абдулатипова в развитие региона.
+              </p>
+              <div className="grid md:grid-cols-3 gap-6 text-center">
+                <div>
+                  <div className="text-3xl font-bold text-gold mb-2">11+</div>
+                  <p className="text-gray-600 font-openSans">Реализованных проектов</p>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-gold mb-2">100%</div>
+                  <p className="text-gray-600 font-openSans">Действующих объектов</p>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-gold mb-2">∞</div>
+                  <p className="text-gray-600 font-openSans">Влияние на будущее</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
