@@ -798,7 +798,7 @@ const Index = () => {
       </section>
 
       {/* Legacy Projects Section */}
-      <section id="legacy-projects" className="py-20 bg-gradient-to-br from-gold/5 to-yellow-50">
+      <section id="legacy-projects" className="py-20 from-gold/5 to-yellow-50 bg-[#b8860b1a]">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6 font-cormorant text-darkGray">
