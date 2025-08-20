@@ -1294,7 +1294,7 @@ const Index = () => {
       </section>
 
       {/* Books Catalog Section */}
-      <section id="books-catalog" className="py-20 bg-white">
+      <section id="books-catalog" className="py-20 bg-[#b8860b1a]">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-4 font-cormorant text-darkGray">
             Каталог книг
