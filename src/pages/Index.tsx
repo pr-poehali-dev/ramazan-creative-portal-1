@@ -1070,7 +1070,7 @@ const Index = () => {
       </section>
 
       {/* Interactive Gallery */}
-      <section id="gallery" className="py-20 bg-[#ffffff1a]">
+      <section id="gallery" className="py-20 bg-[#ffffff]">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-4 font-cormorant text-darkGray">
             Галерея живописи
