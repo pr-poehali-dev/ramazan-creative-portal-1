@@ -1404,9 +1404,7 @@ const Index = () => {
           {/* Order Form */}
           <Card className="max-w-2xl mx-auto bg-lightGray">
             <CardContent className="p-8 bg-[#b8860b1a]">
-              <h3 className="text-2xl font-bold mb-6 font-cormorant text-darkGray text-center">
-                Форма заказа
-              </h3>
+              <h3 className="text-2xl font-bold mb-6 font-cormorant text-darkGray text-center">Форма для обратной связи</h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-semibold text-darkGray mb-2">Имя</label>
