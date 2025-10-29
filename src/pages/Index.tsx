@@ -522,7 +522,8 @@ const Index = () => {
                 Рамазан Гаджимурадович
                 <span className="block text-gold px-0 my-0 mx-0 text-6xl font-extrabold">Абдулатипов</span>
               </h1>
-              <p className="text-xl mb-8 text-gray-300 font-openSans leading-relaxed font-normal text-left">Выдающийся государственный деятель, политик,  философ,  писатель, художник и композитор.  Экс-глава Республики Дагестан, автор более 30 книг, создатель уникальных живописных произведений и музыкальных композиций.</p>
+              <p className="text-xl mb-8 text-gray-300 font-openSans leading-relaxed font-normal text-left">Выдающийся государственный деятель, политик, философ, писатель, художник и композитор.
+ Экс-глава Республики Дагестан, автор более 30 книг, создатель уникальных живописных произведений и музыкальных композиций.</p>
               <div className="flex gap-4">
                 <Button className="bg-gold hover:bg-yellow-600 text-white px-8 py-3" onClick={() => document.getElementById('creative')?.scrollIntoView({ behavior: 'smooth' })}>ТВОРЧЕСТВО </Button>
                 <Button variant="outline" className="border-white text-white hover:bg-white hover:text-darkGray px-8 py-3" onClick={() => document.getElementById('biography')?.scrollIntoView({ behavior: 'smooth' })}>
