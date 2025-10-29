@@ -559,7 +559,7 @@ const Index = () => {
           <div className="text-center">
             <div className="flex justify-center mb-8">
               <img 
-                src="https://cdn.poehali.dev/files/5858ccee-8393-4f91-af21-1c6b4f51a0f8.jpg" 
+                src="https://cdn.poehali.dev/files/18a68986-9282-48ff-9b2e-853fee0cb669.png" 
                 alt="Логотип Рамазана Абдулатипова" 
                 className="h-32 w-auto drop-shadow-lg hover:scale-105 transition-transform duration-300"
               />
