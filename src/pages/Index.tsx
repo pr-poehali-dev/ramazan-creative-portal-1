@@ -514,7 +514,7 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-darkGray to-gray-800 text-white">
+      <section className="from-darkGray to-gray-800 text-white bg-[#01035014] py-20">
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="lg:w-1/2">
