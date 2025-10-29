@@ -495,7 +495,7 @@ const Index = () => {
           <nav className="flex items-center justify-between">
             <div className="flex items-center">
               <img 
-                src="https://cdn.poehali.dev/files/5858ccee-8393-4f91-af21-1c6b4f51a0f8.jpg" 
+                src="https://cdn.poehali.dev/files/18a68986-9282-48ff-9b2e-853fee0cb669.png" 
                 alt="Логотип Рамазана Абдулатипова" 
                 className="h-16 w-auto"
               />
@@ -1741,7 +1741,7 @@ const Index = () => {
         <div className="container mx-auto px-6 text-center">
           <div className="flex justify-center mb-6">
             <img 
-              src="https://cdn.poehali.dev/files/5858ccee-8393-4f91-af21-1c6b4f51a0f8.jpg" 
+              src="https://cdn.poehali.dev/files/18a68986-9282-48ff-9b2e-853fee0cb669.png" 
               alt="Логотип Рамазана Абдулатипова" 
               className="h-20 w-auto opacity-80 hover:opacity-100 transition-opacity duration-300"
             />
