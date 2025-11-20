@@ -502,7 +502,7 @@ const Index = () => {
             </div>
             <div className="hidden md:flex space-x-8">
               <a href="#biography" className="text-darkGray hover:text-gold transition-colors text-2xl font-bold">Биография</a>
-              <a href="#books-catalog" className="text-darkGray hover:text-gold transition-colors font-bold text-2xl">Книги</a>
+              <a href="#books-catalog" target="_blank" rel="noopener noreferrer" className="text-darkGray hover:text-gold transition-colors font-bold text-2xl">Книги</a>
               <a href="#gallery" className="text-darkGray hover:text-gold transition-colors font-bold rounded-none text-2xl">Картины</a>
               <a href="#music-player" className="text-darkGray hover:text-gold transition-colors font-bold rounded-none text-2xl">Музыка</a>
               <a href="#dagestan" className="text-darkGray hover:text-gold transition-colors font-bold rounded-none text-2xl">Дагестан</a>
@@ -1005,7 +1005,7 @@ const Index = () => {
                 />
                 <Badge variant="secondary" className="mb-2">Философия</Badge>
                 <Badge variant="secondary" className="mb-2 ml-2">Политика</Badge>
-                <Button className="mt-4 bg-gold hover:bg-yellow-600 text-white" onClick={() => document.getElementById('books-catalog')?.scrollIntoView({ behavior: 'smooth' })}>
+                <Button className="mt-4 bg-gold hover:bg-yellow-600 text-white" onClick={() => window.open('#books-catalog', '_blank')}>
                   <Icon name="ShoppingCart" size={16} className="mr-2" />
                   Каталог книг
                 </Button>
