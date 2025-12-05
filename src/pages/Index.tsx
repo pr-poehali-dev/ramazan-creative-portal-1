@@ -3,12 +3,16 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import Icon from "@/components/ui/icon";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const Index = () => {
+  const [currentTrack, setCurrentTrack] = useState(0);
+  const [currentAlbum, setCurrentAlbum] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [expandedTimelineItem, setExpandedTimelineItem] = useState<number | null>(null);
+  const [interiorModal, setInteriorModal] = useState<{ src: string; title: string; description?: string } | null>(null);
   const [selectedProject, setSelectedProject] = useState<any | null>(null);
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   const albums = [
     {
@@ -498,9 +502,9 @@ const Index = () => {
             </div>
             <div className="hidden md:flex space-x-8">
               <a href="#biography" className="text-darkGray hover:text-gold transition-colors text-2xl font-bold">Биография</a>
-              <Link to="/books" className="text-darkGray hover:text-gold transition-colors font-bold text-2xl">Книги</Link>
-              <Link to="/gallery" className="text-darkGray hover:text-gold transition-colors font-bold rounded-none text-2xl">Картины</Link>
-              <Link to="/music" className="text-darkGray hover:text-gold transition-colors font-bold rounded-none text-2xl">Музыка</Link>
+              <a href="#books-catalog" target="_blank" rel="noopener noreferrer" className="text-darkGray hover:text-gold transition-colors font-bold text-2xl">Книги</a>
+              <a href="#gallery" className="text-darkGray hover:text-gold transition-colors font-bold rounded-none text-2xl">Картины</a>
+              <a href="#music-player" className="text-darkGray hover:text-gold transition-colors font-bold rounded-none text-2xl">Музыка</a>
               <a href="#dagestan" className="text-darkGray hover:text-gold transition-colors font-bold rounded-none text-2xl">Дагестан</a>
               <a href="#legacy-projects" className="text-darkGray hover:text-gold transition-colors font-bold rounded-none text-2xl">Проекты</a>
               <a href="#contacts" className="text-darkGray hover:text-gold transition-colors font-bold text-2xl px-0">Контакты</a>
@@ -1001,12 +1005,10 @@ const Index = () => {
                 />
                 <Badge variant="secondary" className="mb-2">Философия</Badge>
                 <Badge variant="secondary" className="mb-2 ml-2">Политика</Badge>
-                <Link to="/books">
-                  <Button className="mt-4 bg-gold hover:bg-yellow-600 text-white w-full">
-                    <Icon name="ShoppingCart" size={16} className="mr-2" />
-                    Каталог книг
-                  </Button>
-                </Link>
+                <Button className="mt-4 bg-gold hover:bg-yellow-600 text-white" onClick={() => window.open('#books-catalog', '_blank')}>
+                  <Icon name="ShoppingCart" size={16} className="mr-2" />
+                  Каталог книг
+                </Button>
               </CardContent>
             </Card>
 
@@ -1027,12 +1029,10 @@ const Index = () => {
                 />
                 <Badge variant="secondary" className="mb-2">Пейзажи</Badge>
                 <Badge variant="secondary" className="mb-2 ml-2">Портреты</Badge>
-                <Link to="/gallery">
-                  <Button className="mt-4 bg-gold hover:bg-yellow-600 text-white w-full">
-                    <Icon name="Eye" size={16} className="mr-2" />
-                    Посмотреть галерею
-                  </Button>
-                </Link>
+                <Button className="mt-4 bg-gold hover:bg-yellow-600 text-white" onClick={() => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })}>
+                  <Icon name="Eye" size={16} className="mr-2" />
+                  Посмотреть галерею
+                </Button>
               </CardContent>
             </Card>
 
@@ -1053,26 +1053,24 @@ const Index = () => {
                 />
                 <Badge variant="secondary" className="mb-2">Народная музыка</Badge>
                 <Badge variant="secondary" className="mb-2 ml-2">Композиции</Badge>
-                <Link to="/music">
-                  <Button className="mt-4 bg-gold hover:bg-yellow-600 text-white w-full">
-                    <Icon name="Play" size={16} className="mr-2" />
-                    Слушать музыку
-                  </Button>
-                </Link>
+                <Button className="mt-4 bg-gold hover:bg-yellow-600 text-white" onClick={() => document.getElementById('music-player')?.scrollIntoView({ behavior: 'smooth' })}>
+                  <Icon name="Play" size={16} className="mr-2" />
+                  Слушать музыку
+                </Button>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* Video Testimonials Section */}
-      <section className="py-20 bg-lightGray">
+      {/* Interactive Gallery */}
+      <section id="gallery" className="py-20 bg-[#ffffff]">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-4 font-cormorant text-darkGray">
-            Видео-отзывы и интервью
+            Галерея живописи
           </h2>
           <p className="text-center text-gray-600 mb-16 max-w-2xl mx-auto font-openSans">
-            Личные свидетельства коллег и друзей о деятельности Рамазана Гаджимурадовича
+            Коллекция картин, воплощающих философские размышления и красоту родного края
           </p>
           
           <div className="grid md:grid-cols-3 gap-8">
